@@ -1,0 +1,87 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+/* ================= Add custom styles to the nav bar ================ */
+
+.navbar-custom {
+  background-color: white;
+  padding: 0 2rem;
+  box-shadow: 0 1px 8px 1px rgba(78, 74, 74, 0.37);
+}
+.navbar-brand {
+  font-family: "Yusei Magic", sans-serif;
+  color: rgb(8, 50, 88);
+  font-size: 2rem;
+}
+.navbar-brand:hover {
+  color: rgb(8, 50, 88);
+}
+
+.nav-link {
+  margin: 0 1rem;
+  font-family: "Montesrrat";
+  color: rgb(8, 50, 88);
+}
+
+/* TO make an underline on hover */
+.underlined .nav-link::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -15px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: relative;
+  background: rgb(8, 50, 88);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.underlined .nav-link:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/* ==============Continue to add Custom CSS to the rest of the body ============ */
+
+.container-fluid {
+  width: 100%;
+  height: 85vh;
+}
+.row {
+  height: 100%;
+}
+/*  for the gavel image */
+.gavel {
+  background-image: url("../images/gavel.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* for the heading */
+.heading {
+  position: relative;
+  top: 8rem;
+  left: 2rem;
+  padding: 1rem;
+}
+
+.heading img {
+  width: 12rem;
+  height: 7rem;
+}
+.topHeading {
+  font-size: 5rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+.heading p {
+  margin: 0 4rem 0 2rem;
+  text-align: justify;
+}
+.heading i {
+  position: relative;
+  left: 7rem;
+}
