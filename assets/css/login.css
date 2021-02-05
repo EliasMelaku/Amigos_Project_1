@@ -1,0 +1,106 @@
+/* Remove default margin and padding */
+/* Add background color */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(192, 219, 245);
+}
+
+/* Give some custom css to the container */
+
+.container {
+  max-width: 55rem;
+  background-color: white;
+  height: 80vh;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 8px 1px rgb(148, 147, 147);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*  ======== For the column containing the image ========== */
+.imageCol {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.315), rgba(0, 0, 0, 0.329)),
+    url("../images/bidding.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  border-radius: 1rem 0 0 1rem;
+  padding: 2rem;
+}
+.imageCol h5,
+.imageCol h4 {
+  color: white;
+  margin: 1rem auto;
+  position: relative;
+}
+
+.brand {
+  top: 5rem;
+  left: 2rem;
+  padding: 1rem;
+  background-color: rgba(39, 36, 36, 0.26);
+  display: inline-block;
+  border-radius: 2rem;
+}
+
+.details {
+  top: 19rem;
+  left: 1rem;
+  font-family: "Lexend Mega";
+}
+
+/* ========== For the column containing the form============ */
+
+.formCol {
+  height: 80vh;
+  padding: 1rem;
+}
+
+.formBrand {
+  position: relative;
+  left: 3rem;
+  top: 1rem;
+}
+
+.myForm {
+  position: relative;
+  top: 0.5rem;
+  left: 1rem;
+  padding: 1.5rem;
+}
+.myForm input {
+  margin: 0.7rem 0;
+}
+.myInputs {
+  width: 90%;
+}
+.myInputs:focus {
+  border: solid 1px rgb(153, 153, 153) !important;
+  box-shadow: none !important;
+}
+
+.mySignUpBtn {
+  width: 90%;
+  transition: all 0.4s;
+  border: none;
+  background-image: linear-gradient(rgb(0, 91, 211), rgb(49, 114, 255));
+  font-family: "Lexend Mega";
+}
+.mySignUpBtn:hover {
+  background-color: rgb(9, 9, 85);
+}
+
+/* ============== Add some media queries for some of the things that cant be fixed with bootsrtap */
+
+@media screen and (max-width: 760px) {
+  /*  make the container have some padding on the side on smaller screens */
+
+  .container {
+    width: 80%;
+  }
+}
