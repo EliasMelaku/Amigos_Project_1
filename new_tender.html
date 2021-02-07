@@ -99,6 +99,7 @@
 			  	</div>
 
 				<div class="col-12 col-md-6 mb-3">
+<!--					field of work dd/ select-->
 					<label for="fieldOfWork" 
 						   class="form-label">
 						Field of work
@@ -115,9 +116,7 @@
 					<option  value = "transport">vehicle transport</option>
 					<option value = "security_detail">Security detail</option>
 					</select>
-				</div>
-				
-				<div class="col-12 col-md-6 mb-3">
+<!--					Type of Notice dropdown / select-->
 					<label for="typeOfNotice" 
 						   class="form-label">Type of notice</label>
 					
@@ -133,15 +132,23 @@
 					<option value = "RFT">Request for tender</option>
 
 					</select>
-
-				<label for="flexRadioDefault1 flexRadioDefault2" 
-					   class="form-label">Payment condition</label>
-				<div class="form-check ">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Negotiable
-                  </label>
-                </div>
+				</div>
+<!--				date picker + payment condition-->
+				<div class="col-12 col-md-6 mb-3">
+					
+					<div class="md-form mb-3">
+						<label for="inputMDEx" class="form-label">Deadline of notice</label>
+						<input type="date" id="inputMDEx" class="form-control">
+						
+					</div>		
+					<label for="flexRadioDefault1 flexRadioDefault2" 
+						   class="form-label">Payment condition</label>
+					<div class="form-check ">
+					  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+					  <label class="form-check-label" for="flexRadioDefault1">
+						Negotiable
+					  </label>
+					</div>
 <!--					<br>-->
                   <div class="form-check   ">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
@@ -152,8 +159,10 @@
                   
                 
 				</div>
-                <div class="col-12 col-lg-6"></div>
-<div class="col-12">
+                
+				
+				
+			<div class="col-12">
 			<input type = "submit" value="Submit" class="btn btn-primary mb-2">
 <!--			  <button type="submit" class="btn btn-primary mb-2">Submit</button>-->
 			</div>
