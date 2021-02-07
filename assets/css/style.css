@@ -39,7 +39,7 @@ html {
   height: 2px;
   left: 50%;
   position: relative;
-  background: rgb(8, 50, 88);
+  background-color: rgb(8, 50, 88);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -166,4 +166,6 @@ footer .cols {
     opacity: 0;
     top: 80%;
   }
+}
+.row-fluid {
 }
