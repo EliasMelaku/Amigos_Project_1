@@ -3,6 +3,7 @@ html {
   margin: 0;
   padding: 0;
   background-color: white;
+  height: min-content;
 }
 body {
   overflow-x: hidden;
@@ -20,7 +21,8 @@ body {
   color: rgb(8, 50, 88);
   font-size: 2rem;
 }
-.navbar-brand:hover {
+.navbar-brand:hover,
+.nav-link:hover {
   color: rgb(8, 50, 88);
 }
 
@@ -29,11 +31,8 @@ body {
   font-family: "Montesrrat";
   color: rgb(8, 50, 88);
 }
-.nav-link:hover {
-  color: rgb(8, 50, 88);
-}
 
-/* TO make an underline on hover */
+/* To make an underline on hover */
 .underlined .nav-link::after {
   background: none repeat scroll 0 0 transparent;
   bottom: -15px;
@@ -50,19 +49,22 @@ body {
   width: 100%;
   left: 0;
 }
+/* Add custom css to the tool tip of the profile icon */
+.profile i {
+  cursor: pointer;
+  color: rgb(8, 50, 88);
+}
 
 /* ==============Continue to add Custom CSS to the rest of the body ============ */
 
 .container-fluid {
   width: 100%;
-  height: 85vh;
-}
-.row {
-  height: 100%;
+  /* height: 85vh; */
 }
 
 /* THe section with an image background */
 .firstSection {
+  height: 85vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.26)),
     url("../images/firstSection.jpg");
   background-repeat: no-repeat;
@@ -94,7 +96,7 @@ body {
 
 /* for the heading */
 .heading {
-  position: relative;
+  /* position: relative; */
   top: 8rem;
   left: 2rem;
   padding: 1rem;
@@ -118,7 +120,9 @@ body {
 }
 
 /* Customizations for the fourth row */
-
+.fourthRow {
+  position: relative;
+}
 .myRow {
   height: 60vh;
   background-color: green;
@@ -138,23 +142,86 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 80%;
-  position: relative;
-  top: -15rem;
+  position: absolute;
+  top: 7rem;
   left: 10%;
   border-radius: 1rem;
   box-shadow: 2px 0 8px 1px rgba(230, 221, 221, 0.418);
 }
 
 /* Custom height for the footer and rights section */
-
 footer .cols {
   height: 50vh;
   background-color: rgb(59, 59, 73);
-  margin-top: -10.5rem;
   color: white;
   padding-top: 7rem;
 }
 
+/* ======================================================================== */
+/* ======================    Profile page     ============================= */
+
+.profileSection {
+  padding: 2rem;
+  font-family: "Yusei Magic", sans-serif;
+  text-align: center;
+}
+
+/* .profileSection footer .cols {
+  margin-top: 0;
+} */
+
+.myForm {
+  width: 70%;
+  left: 10%;
+  margin-bottom: 2rem;
+}
+/* For the section with the image picker */
+.list-image > img {
+  display: inline-block;
+  margin: 10px;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+}
+
+.list-image > img:hover {
+  box-shadow: 0 0 8px 1px #1e88e5;
+  border-radius: 50%;
+}
+
+.list-image > img.active {
+  box-shadow: 0 0 8px 1px #43a047;
+  border-radius: 50%;
+}
+
+.view-image > img {
+  max-width: 128px;
+  max-height: 128px;
+  padding: 10px;
+}
+
+/* =================================================================================== */
+/* =================================================================================== */
+/* Add some cutsom media queries */
+@media screen and (max-width: 570px) {
+  /* make the underline small and start from the left in the navbar */
+  .underlined .nav-link::after {
+    left: 0%;
+  }
+  .underlined .nav-link:hover:after {
+    width: 30%;
+  }
+  .profile {
+    position: relative;
+    margin-top: 1rem;
+    left: 1rem;
+    width: 10%;
+  }
+  .myForm {
+    width: 100%;
+    left: 0;
+  }
+}
 /* Some cool animations */
 
 @keyframes scrollDown {

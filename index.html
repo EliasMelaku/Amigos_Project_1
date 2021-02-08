@@ -13,7 +13,6 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-
     <!-- Custom fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -25,7 +24,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
-
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -35,31 +33,37 @@
       <button
         class="navbar-toggler navbar-light"
         type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavbar"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavbar"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav mx-auto underlined">
-          <li class="nav-item d-none d-sm-inline">
-            <a class="nav-link active" href="index.html">Create Auction</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="newListings.html">New Listing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="education.html">My Bids</a>
+            <a class="nav-link" href="auctions.html">Live Auctions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog.html">My Auctions</a>
+            <a class="nav-link" href="myAuctions.html">My Auctions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">About Us</a>
+            <a class="nav-link" href="aboutUs.html">About Us</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="hireMe.html"
-              ><i class="fas fa-user-circle fa-2x"></i
-            ></a>
+          <li
+            class="nav-item profile"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-placement-md="left"
+            title="Profile"
+          >
+            <a href="profile.html ">
+              <i class="fas fa-user-circle fa-2x"></i>
+            </a>
           </li>
         </ul>
       </div>
@@ -117,18 +121,33 @@
 
         <div class="myCard"></div>
       </div>
-
-      <!-- The footer -->
-      <footer>
-        <div class="row">
-          <div class="col-md-6 cols">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-youtube"></i>
-          </div>
-          <div class="col-md-6 cols">w</div>
-        </div>
-      </footer>
     </div>
+    <!-- The footer -->
+    <footer>
+      <div class="row">
+        <div class="col-md-6 cols">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+        <div class="col-md-6 cols">w</div>
+      </div>
+    </footer>
+    <!-- Add some bootsrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- some custom js -->
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
