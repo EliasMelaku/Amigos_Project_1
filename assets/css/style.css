@@ -4,6 +4,9 @@ html {
   padding: 0;
   background-color: white;
 }
+body {
+  overflow-x: hidden;
+}
 
 /* ================= Add custom styles to the nav bar ================ */
 
