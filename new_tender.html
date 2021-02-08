@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Create New Tender| Tender.com</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+
+    <!-- Custom fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Montserrat:wght@100&family=Yusei+Magic&family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+
+<body>
+    <!-- Lets start with the nav here -->
+    <nav class="navbar navbar-expand-sm sticky-top navbar-custom py-3">
+        <a class="navbar-brand" href="index.html">Auctioneer</a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mx-auto underlined">
+                <li class="nav-item d-none d-sm-inline">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="education.html">My Bids</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html">My Auctions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">About Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="hireMe.html">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--	===============  notice creation form  ====================-->
+    <div class="container mt-2 card bg-light">
+        <!-- action="assets/js/createTender.js" method="get" -->
+        <form id="form-card">
+            <div class="form-row align-items-center">
+
+                <div class="row px-lg-5 mx-lg-5">
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label for="noticeTitle" class="form-label">Title</label>
+                            <input type="text" autofocus class="form-control" id="noticeTitle" placeholder="...Subject of notice">
+                        </div>
+                        <!--			BRIEF EXPLANATION-->
+                        <div class="mb-3">
+                            <label for="noticeDetail" class="form-label">Detail</label>
+                            <input type="text" class="form-control" id="noticeDetail" placeholder="Brief explanation of subject" />
+                        </div>
+                        <!--			ORGANIZATION NAME-->
+
+                        <label for="noticeOrganization" class="form-label">Name of Organization </label>
+                        <input type="text" class="form-control" disabled id="noticeOrganization" placeholder="Organization name" />
+
+                    </div>
+                    <!--			DESCRIPTION-->
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label for="noticeDescription" class="form-label">Description</label>
+                            <textarea class="form-control" maxlength="200" id="noticeDescription" rows="8"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-6 mb-3">
+                        <!--					field of work dd/ select-->
+                        <label for="fieldOfWork" class="form-label">
+							Field of work
+						</label>
+
+                        <select type="text" class="bg-white form-control " id="fieldOfWork" name="fieldlist" form="form-card">
+						<option value = "medcal_supply">Medical supplier</option>
+						<option  value = "manual_labour">Manual labour</option>
+						<option  value = "construction_labour">Construction supply</option>
+						<option  value = "transport">vehicle transport</option>
+						<option value = "security_detail">Security detail</option>
+						</select>
+                        <!--					Type of Notice dropdown / select-->
+                        <label for="typeOfNotice" class="form-label">Type of notice</label>
+
+                        <select type="text" class=" bg-white form-control" id="typeOfNotice" name="typelist" form="form-card">
+						<option value = "EOI">Expression of Interest</option>
+						<option  value = "RFI">Request for Information</option>
+						<option  value = "RFP">Request for proposal</option>
+						<option  value = "RFQ">Request for Quotation</option>
+						<option value = "RFT">Request for tender</option>
+
+						</select>
+                    </div>
+                    <!--				date picker + payment condition-->
+                    <div class="col-12 col-md-6 mb-3">
+
+                        <div class="md-form mb-3">
+                            <label for="deadline" class="form-label">Deadline of notice</label>
+                            <input type="date" id="deadline" class="form-control">
+
+                        </div>
+                        <label for="flexRadioDefault1 flexRadioDefault2" class="form-label">Payment condition</label>
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="paymentCondition" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+							Negotiable
+						  </label>
+                        </div>
+                        <!--					<br>-->
+                        <div class="form-check   ">
+                            <input class="form-check-input" type="radio" name="paymentCondition" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+							  Non-negotiable
+							</label>
+                        </div>
+
+
+                    </div>
+
+                    <!--				contacts-->
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label for="telephone" class="form-label">Contacts</label>
+                            <input type="tel" class="form-control mb-2" id="telephone" placeholder="09........" maxlength=10>
+                            <input type="email" class="form-control mb-2" id="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6  mb-3">
+                        <label class="form-label" for="fileAttachment">Additional files</label>
+                        <input type="file" class="form-control file" id="fileAttachment" accept="image/*, application/*">
+                    </div>
+
+                    <div class="col-12">
+                        <!-- <input type="submit" value="Submit" class="btn btn-primary mb-2 " id="btnSubmit"> -->
+                        <button type="submit" class="btn btn-primary mb-2" id="btnSubmit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- The container for everything -->
+    <script src="https://unpkg.com/localbase/dist/localbase.dev.js"></script>
+    <script>
+        const noticeColl = new Localbase("createNotice")
+        const userId = randomNumber(99);
+        /*   ======| DOM elements |======    */
+        const btnSubmit = document.getElementById("btnSubmit");
+        btnSubmit.addEventListener("click", submitNotice);
+
+
+        /*     Functions         */
+
+        function randomNumber(limit) {
+            return Math.floor(Math.random() * limit);
+        }
+
+        function submitNotice() {
+            noticeColl.collection('tenders').add({
+                id: userId,
+                noticeTitle: document.getElementById("noticeTitle").value,
+                noticeDetail: document.getElementById("noticeDetail").value,
+                noticeOrg: document.getElementById('noticeOrganization').value,
+                noticeDescription: document.getElementById('noticeDescription').value,
+                fieldOfWork: document.getElementById('fieldOfWork').value,
+                typeOfNotice: document.getElementById('typeOfNotice').value,
+                deadline: document.getElementById('deadline').value,
+                paymentCondition: function() {
+                    var condition = document.getElementsByName('paymentCondition');
+                    for (let i = 0; i < condition.length; i++) {
+                        if (condition[i].checked) {
+                            return condition[i];
+                        }
+                    }
+                },
+                telephone: document.getElementById('telephone').value,
+                email: document.getElementById('email').value,
+                fileAtt: document.getElementById('fileAttachment').files[0].name
+
+            })
+        }
+    </script>
+    <!-- <script src="assets/js/createTender.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+
+</html>
+</body>
+
+</html>
