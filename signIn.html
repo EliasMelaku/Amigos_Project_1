@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-In | Auctionner</title>
 
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+    <!-- Custom fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Montserrat:wght@100&family=Yusei+Magic&display=swap"
       rel="stylesheet"
     />
+    <!-- Fontawesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- Custom css -->
     <link rel="stylesheet" href="assets/css/login.css" />
   </head>
   <body>
@@ -26,20 +34,30 @@
           <h4 class="formBrand">Auctioneer</h4>
           <form action="" class="myForm">
             <label for="">Userame *</label>
+
             <input
               type="text"
               class="form-control username myInputs"
               required
               placeholder="Username"
             />
+            <label for="" class="error">
+              <i class="fas fa-exclamation-circle fa-sm"></i>Username not
+              found</label
+            >
 
-            <label for="">Password *</label>
+            <label for="">Password * </label>
             <input
               type="password"
               class="form-control password myInputs"
               required
               placeholder="********"
             />
+            <label for="" class="error errorPass">
+              <i class="fas fa-exclamation-circle fa-xs"></i> Incorrect
+              password</label
+            >
+            <i class="far fa-eye theEye"></i>
 
             <input
               type="submit"
@@ -57,5 +75,65 @@
     </div>
 
     <!-- Add some JS -->
+    <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
+
+    <!-- <script src="assets/js/login.js"></script> -->
+
+    <script>
+      const Username = document.querySelector(".username");
+      const Password = document.querySelector(".password");
+      const myForm = document.querySelector(".myForm");
+      const eye = document.querySelector(".theEye");
+
+      // Add event listener to the eye
+      eye.addEventListener("click", function (e) {
+        // toggle the type attribute
+        const type =
+          Password.getAttribute("type") === "password" ? "text" : "password";
+        Password.setAttribute("type", type);
+        // toggle the eye slash icon
+        this.classList.toggle("fa-eye-slash");
+      });
+
+      myForm.addEventListener("submit", logIn);
+
+      function logIn(e) {
+        e.preventDefault();
+
+        let users = new Localbase("users");
+        let userFound = true;
+        let logger = {
+          username: Username.value,
+          password: Password.value,
+        };
+        users
+          .collection("users")
+          .get()
+          .then((users) => {
+            for (var i = 0; i < users.length; i++) {
+              if (users[i].username == logger.username) {
+                if (users[i].password == logger.password) {
+                  myForm.reset();
+                  window.location.href = "index.html";
+                  userFound = true;
+                  break;
+                } else {
+                  document.querySelector(".errorPass").style.visibility =
+                    "visible";
+                  document.querySelector(".error").style.visibility = "hidden";
+                  userFound = true;
+                  break;
+                }
+              } else {
+                userFound = false;
+              }
+            }
+            if (!userFound) {
+              document.querySelector(".error").style.visibility = "visible";
+              document.querySelector(".errorPass").style.visibility = "hidden";
+            }
+          });
+      }
+    </script>
   </body>
 </html>

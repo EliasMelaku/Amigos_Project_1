@@ -79,6 +79,23 @@ body {
   display: block;
 }
 
+/* Adjust the error messages */
+.error {
+  color: red;
+  font-size: 0.7rem;
+  display: block;
+  margin: -0.5rem 0 1rem;
+  visibility: hidden;
+  padding: 0 0.5rem;
+}
+
+/* Customize the eye icon */
+.theEye {
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  cursor: pointer;
+}
 .formBrand {
   position: relative;
   left: 3rem;
