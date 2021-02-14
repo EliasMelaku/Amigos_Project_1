@@ -28,7 +28,8 @@ body {
 
 .nav-link {
   margin: 0 1rem;
-  font-family: "Montesrrat";
+  font-family: "Montserrat";
+  font-weight: 800;
   color: rgb(8, 50, 88);
 }
 

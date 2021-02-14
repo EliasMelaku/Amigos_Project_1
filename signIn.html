@@ -64,7 +64,6 @@
               name=""
               value="SIGN IN"
               class="btn btn-primary mySignUpBtn"
-              href="index.html"
             />
             <a href="register.html" class="alreadyHaveOne"
               >Don't have an account? Sign-Up!</a
@@ -114,7 +113,8 @@
               if (users[i].username == logger.username) {
                 if (users[i].password == logger.password) {
                   myForm.reset();
-                  window.location.href = "index.html";
+                  console.log(logger.username);
+                  window.location.href = `index.html? id=${logger.username}`;
                   userFound = true;
                   break;
                 } else {
