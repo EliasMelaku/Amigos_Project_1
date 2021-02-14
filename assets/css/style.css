@@ -16,44 +16,41 @@ body {
   padding: 0 2rem;
   box-shadow: 0 1px 8px 1px rgba(78, 74, 74, 0.37);
 }
-.navbar-brand {
+.navbar .navbar-brand {
   font-family: "Yusei Magic", sans-serif;
   color: #ffffff;
   font-size: 2rem;
-}
-.navbar-brand:hover,
-.nav-link:hover {
-  color: rgb(8, 50, 88);
+  text-decoration: none;
 }
 
-.nav-link {
+.nav-item .nav-link {
   margin: 0 1rem;
   font-family: "Montesrrat";
   color: #ffffff;
-  text-align: center;
 }
 
 /* To make an underline on hover */
-.underlined .nav-link::after {
+.nav-link::after {
   background: none repeat scroll 0 0 transparent;
-  bottom: -15px;
+  bottom: -6px;
   content: "";
   display: block;
-  height: 2px;
+  height: 1px;
   left: 50%;
   position: relative;
-  background-color: rgb(8, 50, 88);
+  background-color: white;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-.underlined .nav-link:hover:after {
+.nav-link:hover:after {
   width: 100%;
   left: 0;
 }
+
 /* Add custom css to the tool tip of the profile icon */
 .profile i {
   cursor: pointer;
-  color: rgb(8, 50, 88);
+  color: white;
 }
 
 /* ==============Continue to add Custom CSS to the rest of the body ============ */
@@ -63,31 +60,6 @@ body {
   /* height: 85vh; */
 }
 
-/* THe section with an image background */
-.firstSection {
-  height: 85vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.26)),
-    url("../images/firstSection.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.firstSection h1 {
-  font-size: 5rem;
-  font-weight: bold;
-  font-family: "Montserrat";
-  color: white;
-  position: absolute;
-  top: 50%;
-  text-align: center;
-}
-.scrollDown {
-  color: white;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  animation: scrollDown 3s infinite;
-}
 /*  for the gavel image */
 .gavel {
   background-image: url("../images/gavel.png");
@@ -167,10 +139,6 @@ footer .cols {
   text-align: center;
 }
 
-/* .profileSection footer .cols {
-  margin-top: 0;
-} */
-
 .myForm {
   width: 70%;
   left: 10%;
@@ -206,11 +174,11 @@ footer .cols {
 /* Add some cutsom media queries */
 @media screen and (max-width: 570px) {
   /* make the underline small and start from the left in the navbar */
-  .underlined .nav-link::after {
+  .nav-link::after {
     left: 0%;
   }
-  .underlined .nav-link:hover:after {
-    width: 30%;
+  .nav-link:hover:after {
+    width: 40%;
   }
   .profile {
     position: relative;
