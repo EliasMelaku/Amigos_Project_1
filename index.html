@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auctioneer</title>
-
+    <link rel="icon" href="assets/images/auction.jpg" type="image/x-icon">
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -13,6 +13,12 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+
     <!-- Custom fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -24,20 +30,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link rel="stylesheet" href="assets/css/style_1.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
   <body>
-    <!-- Lets start with the nav here -->
-    <nav class="navbar navbar-expand-sm sticky-top navbar-custom py-3">
+
+<!-- The navigation bar 
+-------Navbar start  -->
+<nav class="navbar navbar-expand-md fixed-top">
+  <div class="container">
+      <!-- Brand -->
       <a class="navbar-brand" href="index.html">Auctioneer</a>
-      <button
-        class="navbar-toggler navbar-light"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapsibleNavbar"
-      >
-        <span class="navbar-toggler-icon"></span>
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
       </button>
+
+      <!-- Navbar links -->
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav mx-auto underlined">
           <li class="nav-item">
@@ -67,16 +78,25 @@
           </li>
         </ul>
       </div>
-    </nav>
+  </div>
+</nav>
+<!-- Navbar end -->
 
-    <!-- The container for everything -->
+<!-- Home section start-->
+<section class="home d-flex align-items-center">
+  <div class="effect-wrap">
+    <i class="fas fa-plus effect effect-1"> </i>
+    <i class="fas fa-plus effect effect-2"> </i>
+    <i class="fas fa-plus effect effect-3"> </i>
+    <i class="fas fa-circle-notch effect effect-4"> </i>
+  </div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-log-5 col-md-5 text-center">
+        <div class="home-img">
+          <div class="circle">
 
-    <div class="container-fluid">
-      <!-- First section containing an image -->
-      <div class="row firstSection">
-        <h1>Start acutioning today</h1>
-        <i class="fas fa-arrow-down fa-3x scrollDown"></i>
-      </div>
+          </div>
 
       <!-- Second section with main info -->
       <div class="row secondSection">
@@ -106,11 +126,30 @@
           <hr />
         </div>
         <div class="col-md-6 gavel"></div>
+        <img src="assets/images/auction2.jpg" alt="auction web">
+        </div>
+      </div>
+      <!-- Another section -->
+
+      <div class="col-lg-7 col-md-7 ">
+        <div class="home-text">
+          <h1> Bid always to get what you want...!</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. </p> 
+                  
+        </div>     
       </div>
 
-      <!-- Fourth section with some minor info and the floating card -->
+    </div>
+  </div>
+  
 
-      <div class="row fourthRow">
+
+</section>
+
+ <div class="row fourthRow">
         <div class="myRow">
           <h1>Making bidding for projects much simpler</h1>
         </div>
@@ -126,24 +165,18 @@
           <i class="fab fa-twitter"></i>
           <i class="fab fa-youtube"></i>
         </div>
+
         <div class="col-md-6 cols">w</div>
       </div>
     </footer>
-    <!-- Add some bootsrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"
-    ></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- some custom js -->
-    <script src="assets/js/app.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
