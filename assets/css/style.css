@@ -62,9 +62,26 @@ body {
 
 /*  for the gavel image */
 .gavel {
-  background-image: url("../images/gavel.png");
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.541),
+      rgba(0, 0, 0, 0.205)
+    ),
+    url("../images/yourAuctions.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom;
+  margin-left: -1rem;
+  text-align: center;
+  color: white;
+}
+.gavel .topHeading {
+  font-size: 5rem;
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
 }
 
 /* for the heading */
@@ -79,10 +96,7 @@ body {
   width: 12rem;
   height: 7rem;
 }
-.topHeading {
-  font-size: 5rem;
-  font-family: "Josefin Sans", sans-serif;
-}
+
 .heading p {
   margin: 0 4rem 0 2rem;
   text-align: justify;

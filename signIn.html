@@ -108,14 +108,21 @@
         users
           .collection("users")
           .get()
-          .then((users) => {
-            for (var i = 0; i < users.length; i++) {
-              if (users[i].username == logger.username) {
-                if (users[i].password == logger.password) {
+          .then((listOfUsers) => {
+            for (var i = 0; i < listOfUsers.length; i++) {
+              if (listOfUsers[i].username == logger.username) {
+                if (listOfUsers[i].password == logger.password) {
                   myForm.reset();
-                  console.log(logger.username);
-                  window.location.href = `index.html? username=${i + 1}`;
-                  userFound = true;
+
+                  users
+                    .collection("users")
+                    .doc({ id: i + 1 })
+                    .get()
+                    .then((theUser) => {
+                      // console.log(theUser.username);
+                      window.location.href = `index.html?username=${theUser.username} `;
+                      userFound = true;
+                    });
                   break;
                 } else {
                   document.querySelector(".errorPass").style.visibility =

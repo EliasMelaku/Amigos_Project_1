@@ -120,6 +120,7 @@
     </section>
 
     <div class="row thirdSection">
+      <div class="col-md-6"></div>
       <div class="col-md-6 heading">
         <img src="assets/images/undraw_For_sale_re_egkk.svg" alt="" />
         <h1 class="topHeading">Amazing Deals</h1>
@@ -130,20 +131,15 @@
         </p>
         <hr />
       </div>
-      <div class="col-md-6 gavel"></div>
     </div>
     <div class="row thirdSection">
-      <div class="col-md-6 gavel"></div>
-      <div class="col-md-6 heading">
-        <img src="assets/images/undraw_For_sale_re_egkk.svg" alt="" />
-        <h1 class="topHeading">Amazing Deals</h1>
-        <p>
-          some cool description here some cool description here some cool
-          description here some cool description here some cool description here
-          some cool description here some cool description here
-        </p>
-        <hr />
+      <div class="col-md-12 heading gavel">
+        <h1 class="topHeading">Yell free!</h1>
+        <h1 class="topHeading">Great Sales.</h1>
       </div>
+      <!-- <div class="col-md-6 gavel">
+        <img src="assets/images/yourAuctions.jpg" alt="" />
+      </div> -->
     </div>
 
     <div class="row fourthRow">
@@ -181,8 +177,8 @@
 
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const id = Number(urlParams.get("username"));
-      console.log(id);
+      const currentUser = String(urlParams.get("username"));
+
       //DB
       var DB;
 
@@ -203,10 +199,17 @@
           displayTask();
         };
 
+        console.log(currentUser);
+
+        const profile = document.querySelector(".profile");
+        profile.addEventListener("click", function () {
+          window.location.href = `profile.html?username=${currentUser}`;
+        });
+
         function displayTask() {
           var transaction = DB.transaction(["users"]);
           var objectStore = transaction.objectStore("users");
-          var request = objectStore.get(id);
+          var request = objectStore.get(currentUser);
 
           request.onsuccess = function (event) {
             if (request.result) {
