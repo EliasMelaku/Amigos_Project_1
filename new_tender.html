@@ -59,8 +59,14 @@
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-          <li class="profile">
-            <a href="profile.html">
+          <li
+            class="nav-item profile"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-placement-md="left"
+            title="Profile"
+          >
+            <a href="profile.html ">
               <i class="fas fa-user-circle fa-2x"></i>
             </a>
           </li>
@@ -104,7 +110,7 @@
     </nav>
 
     <!--	===============  notice creation form  ====================-->
-    <div class="container mt-2 card bg-light">
+    <div class="container mt-2 card bg-light" style="margin-bottom: 2rem">
       <!-- action="assets/js/createTender.js" method="get" -->
       <form id="form-card">
         <div class="form-row align-items-center">
@@ -276,6 +282,18 @@
         </div>
       </form>
     </div>
+
+    <!-- The footer -->
+    <footer>
+      <div class="row">
+        <div class="col-md-6 cols">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+        <div class="col-md-6 cols">w</div>
+      </div>
+    </footer>
 
     <!-- The container for everything -->
     <script src="https://unpkg.com/localbase/dist/localbase.dev.js"></script>

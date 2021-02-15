@@ -92,13 +92,19 @@ body {
   left: 7rem;
 }
 
+/* ================== Customizing the third row */
+.thirdSection {
+  height: 75vh;
+  margin-bottom: 2rem;
+}
+
 /* Customizations for the fourth row */
 .fourthRow {
   position: relative;
 }
 .myRow {
   height: 60vh;
-  background-color: green;
+  background-color: gold;
 }
 
 .myRow h1 {
@@ -120,14 +126,20 @@ body {
   left: 10%;
   border-radius: 1rem;
   box-shadow: 2px 0 8px 1px rgba(230, 221, 221, 0.418);
+  z-index: 10;
 }
 
 /* Custom height for the footer and rights section */
+footer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../images/auction.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 footer .cols {
   height: 50vh;
-  background-color: rgb(59, 59, 73);
   color: white;
-  padding-top: 7rem;
+  padding: 7rem 2rem 0;
 }
 
 /* ======================================================================== */
@@ -189,6 +201,13 @@ footer .cols {
   .myForm {
     width: 100%;
     left: 0;
+  }
+  .myCard {
+    height: 30vh;
+    top: 13rem;
+  }
+  .thirdSection {
+    margin-bottom: 5.5rem;
   }
 }
 /* Some cool animations */
