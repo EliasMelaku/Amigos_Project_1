@@ -44,7 +44,7 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav mx-auto underlined">
           <li class="nav-item">
-            <a class="nav-link active" href="newListings.html">New Listing</a>
+            <a class="nav-link active" href="new_tender.html">New Listing</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="auctions.html">Active Auctions</a>
@@ -184,7 +184,21 @@
       // var edit = document.querySelector("approveEdit");
 
       document.addEventListener("DOMContentLoaded", () => {
-        // displayUsers();
+        displayUsers();
+
+        let usersDBVanilla = indexedDB.open("users", 1);
+
+        // if there's an error
+        usersDBVanilla.onerror = function () {
+          console.log("There was an error");
+        };
+        // if everything is fine, assign the result to the instance
+        usersDBVanilla.onsuccess = function () {
+          // console.log('Database Ready');
+
+          // save the result
+          DB = usersDBVanilla.result;
+        };
 
         editForm.addEventListener("submit", updateUserCredentials);
 
@@ -193,7 +207,7 @@
 
           usersTable
             .collection("users")
-            .doc({ username: currentUserName })
+            .doc({ id: 1 })
             .get()
             .then((currentUser) => {
               Username.value = currentUser.username;
@@ -207,11 +221,24 @@
 
           usersTable
             .collection("users")
-            .doc({ username: currentUserName })
-            .set({
-              username: Username.value,
-              password: Password.value,
-              email: Email.value,
+            .doc({ id: 1 })
+            .get()
+            .then((currentUser) => {
+              var transaction = DB.transaction(["users"], "readwrite");
+              var objectStore = transaction.objectStore("users");
+
+              let newValue = {
+                username: Username.value,
+                password: Password.value,
+                email: Email.value,
+                id: currentUser.id,
+              };
+
+              objectStore.put(newValue);
+
+              currentUserName = newValue.username;
+              window.alert("Account credentials edited");
+              displayUsers();
             });
         }
       });
