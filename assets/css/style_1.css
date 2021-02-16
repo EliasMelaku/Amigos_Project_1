@@ -22,12 +22,12 @@ Global Css
   --black-alpha-100: rgba(0,0,0,0.05);
 }
 body{
-  font-style: 
+   
   font-size: 16px;
   font-weight: 400;
   overflow-x: hidden;
   background-color: #ffffff;
-  line-height: 1.5;
+ 
 
 }
 *{
@@ -167,7 +167,7 @@ Navbar
   padding: 210px 0;
   background-color: var(--main-to-dark-color);
   /*effect-wrap */
-  border-radius: 0 0 200px 0;
+  
   position: relative;
   z-index: 1
 }
@@ -185,9 +185,7 @@ Navbar
   font-weight: 300;
 }
 /*the doownload button */
-.home .home-btn{
-  margin-top:40px;
-}
+
 .home-img img{
   max-width: 270px;
   width: 100%;
@@ -224,3 +222,4 @@ Navbar
   animation: spin_01 10s linear infinite;
 
 }
+

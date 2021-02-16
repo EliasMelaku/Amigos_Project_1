@@ -127,14 +127,15 @@ body {
 }
 .myRow {
   height: 60vh;
-  background-color: green;
+  
+  background-color:#7857fe;
 }
 
 .myRow h1 {
   font-family: "Yusei Magic", sans-serif;
   color: white;
   position: relative;
-  top: 3rem;
+  top: 1rem;
   text-align: center;
 }
 
@@ -145,7 +146,7 @@ body {
   background-size: cover;
   width: 80%;
   position: absolute;
-  top: 7rem;
+  top: 4rem;
   left: 10%;
   border-radius: 1rem;
   box-shadow: 2px 0 8px 1px rgba(230, 221, 221, 0.418);
@@ -238,6 +239,4 @@ footer .cols {
     opacity: 0;
     top: 80%;
   }
-}
-.row-fluid {
 }
