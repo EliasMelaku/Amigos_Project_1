@@ -12,14 +12,15 @@ body {
 /* ================= Add custom styles to the nav bar ================ */
 
 .navbar-custom {
-  background-color: white;
+  background-color: #7857fe;
   padding: 0 2rem;
   box-shadow: 0 1px 8px 1px rgba(78, 74, 74, 0.37);
 }
 .navbar-brand {
   font-family: "Yusei Magic", sans-serif;
-  color: rgb(8, 50, 88);
+  color: #ffffff;
   font-size: 2rem;
+
 }
 .navbar-brand:hover,
 .nav-link:hover {
@@ -29,7 +30,8 @@ body {
 .nav-link {
   margin: 0 1rem;
   font-family: "Montesrrat";
-  color: rgb(8, 50, 88);
+  color: #ffffff;
+  text-align: center;
 }
 
 /* To make an underline on hover */
@@ -125,14 +127,15 @@ body {
 }
 .myRow {
   height: 60vh;
-  background-color: green;
+  
+  background-color:#7857fe;
 }
 
 .myRow h1 {
   font-family: "Yusei Magic", sans-serif;
   color: white;
   position: relative;
-  top: 3rem;
+  top: 1rem;
   text-align: center;
 }
 
@@ -143,7 +146,7 @@ body {
   background-size: cover;
   width: 80%;
   position: absolute;
-  top: 7rem;
+  top: 4rem;
   left: 10%;
   border-radius: 1rem;
   box-shadow: 2px 0 8px 1px rgba(230, 221, 221, 0.418);
