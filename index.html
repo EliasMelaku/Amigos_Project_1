@@ -39,50 +39,48 @@
     <!-- The navigation bar 
 -------Navbar start  -->
     <nav class="navbar navbar-expand-md navbar-custom sticky-top py-3">
-      <div class="container">
-        <!-- Brand -->
-        <a class="navbar-brand" href="index.html">Auctioneer</a>
+      <!-- Brand -->
+      <a class="navbar-brand homepage" href="#">Auctioneer</a>
 
-        <!-- Toggler/collapsibe Button -->
-        <button
-          class="navbar-toggler navbar-dark"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapsibleNavbar"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <!-- Toggler/collapsibe Button -->
+      <button
+        class="navbar-toggler navbar-dark"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="new_tender.html">New Listing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Active Auctions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">My Auctions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Announcements</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ms-auto">
-            <li
-              class="nav-item profile"
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-placement-md="left"
-              title="Profile"
-            >
-              <a href="#">
-                <i class="fas fa-user-circle fa-2x"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link newListing" href="#">New Listing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link activeAuctions" href="#">Active Auctions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link myAuctions" href="#">My Auctions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link announcements" href="#">Announcements</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li
+            class="nav-item profile"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-placement-md="left"
+            title="Profile"
+          >
+            <a href="#">
+              <i class="fas fa-user-circle fa-2x"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
     <!-- Navbar end -->
@@ -237,11 +235,12 @@
 
     <!-- Some custom JS -->
 
-    <!-- <script src="app.js"></script> -->
+    <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/navigation.js" type="module"></script>
 
-    <script>
+    <!-- <script>
       const urlParams = new URLSearchParams(window.location.search);
-      const currentUser = String(urlParams.get("username"));
+      export const currentUser = String(urlParams.get("username"));
 
       //DB
       var DB;
@@ -260,7 +259,6 @@
           console.log("Database Ready");
 
           DB = UsersDB.result;
-          displayTask();
         };
 
         console.log(currentUser);
@@ -269,25 +267,7 @@
         profile.addEventListener("click", function () {
           window.location.href = `profile.html?username=${currentUser}`;
         });
-
-        function displayTask() {
-          var transaction = DB.transaction(["users"]);
-          var objectStore = transaction.objectStore("users");
-          var request = objectStore.get(currentUser);
-
-          request.onsuccess = function (event) {
-            if (request.result) {
-              console.log(request.result);
-            } else {
-              console.log("No data record");
-            }
-          };
-
-          request.onerror = function (event) {
-            console.log("Transaction failed");
-          };
-        }
       });
-    </script>
+    </script> -->
   </body>
 </html>

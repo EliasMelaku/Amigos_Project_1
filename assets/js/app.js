@@ -1,33 +1,25 @@
-var tooltipTriggerList = [].slice.call(
-  document.querySelectorAll('[data-bs-toggle="tooltip"]')
-);
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl);
-});
+const urlParams = new URLSearchParams(window.location.search);
+const currentUser = Number(urlParams.get("username"));
 
-// var username = document.querySelector(".username");
+export { currentUser };
+//DB
+// var DB;
 
-// username.addEventListener("keyup", checkInput);
+// // Add Event Listener [on Load]
+// document.addEventListener("DOMContentLoaded", () => {
+//   // create the database
+//   let UsersDB = indexedDB.open("users", 1);
 
-// function checkInput() {
-//   var value = username.value;
-//   if (value !== "") {
-//     var userRegex = /^[A-Za-z0-9_-]{4,16}$/;
-//     var userResult = userRegex.test(value);
-//     if (userResult == false) {
-//       document.querySelector(".username").style.boxShadow =
-//         "0 0 5px 0.2px #CA0B00";
-//       document.querySelector(".username").style.border = "none";
-//       console.log("Something is up");
-//     } else {
-//       document.querySelector(".username").style.boxShadow =
-//         "0 0 5px 0.2px #4BB543";
-//       document.querySelector(".username").style.border = "none";
-//     }
-//   } else {
-//     document.querySelector(".username").style.boxShadow =
-//       "0 0 5px 0.2px #CA0B00";
-//     document.querySelector(".username").style.border = "none";
-//     console.log("Something is up");
-//   }
-// }
+//   // if there's an error
+//   UsersDB.onerror = function () {
+//     console.log("There was an error");
+//   };
+//   // if everything is fine, assign the result to the instance
+//   UsersDB.onsuccess = function () {
+//     console.log("Database Ready");
+
+//     DB = UsersDB.result;
+//   };
+
+//   console.log(currentUser);
+// });

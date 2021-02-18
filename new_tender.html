@@ -33,80 +33,52 @@
 
   <body>
     <!-- Lets start with the nav here -->
-    <nav class="navbar navbar-expand-sm sticky-top navbar-custom py-3">
-      <a class="navbar-brand" href="index.html">Auctioneer</a>
-      <button
-        class="navbar-toggler navbar-dark"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavbar"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="new_tender.html">New Listing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="education.html">Active Auctions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog.html">My Auctions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Announcements</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ms-auto">
-          <li
-            class="nav-item profile"
-            data-bs-toggle="tooltip"
-            data-bs-placement="right"
-            data-bs-placement-md="left"
-            title="Profile"
-          >
-            <a href="profile.html ">
-              <i class="fas fa-user-circle fa-2x"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <nav class="navbar navbar-expand-md fixed-top sticky-top navbar-custom">
-      <!-- <div class="container"> -->
-      <!-- Brand -->
-      <!-- <a class="navbar-brand" href="index.html">Auctioneer</a> -->
+    <nav class="navbar navbar-expand-md navbar-custom sticky-top py-3">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand homepage" href="#">Auctioneer</a>
 
-      <!-- Toggler/collapsibe Button -->
-      <!-- <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
+        <!-- Toggler/collapsibe Button -->
+        <button
+          class="navbar-toggler navbar-dark"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
           <span class="navbar-toggler-icon"></span>
-      </button> -->
+        </button>
 
-      <!-- Navbar links -->
-      <!-- <div class="collapse navbar-collapse" id="collapsibleNavbar">
-         <ul class="navbar-nav ml-auto"  >
-             <li class="nav-item">
-                <a class="nav-link active "href="index.html">Home</a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link "href="new_tender.html">New Listing</a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link "href="#">Live Auctions</a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link "href="#">My Auction</a>
-             </li>
-             <li class="nav-item">
-                <a class="nav-link "href="#">About Us</a>
-             </li>
-             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-user-circle fa-2x"></i></a>
-          </li>
-        </ul>
-      </div> -->
-      <!-- </div> -->
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link newListing" href="#">New Listing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link activeAuctions" href="#">Active Auctions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link myAuctions" href="#">My Auctions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link announcements" href="#">Announcements</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li
+              class="nav-item profile"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-placement-md="left"
+              title="Profile"
+            >
+              <a href="#">
+                <i class="fas fa-user-circle fa-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <!--	===============  notice creation form  ====================-->
@@ -312,5 +284,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="assets/js/createTender.js"></script>
+    <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/navigation.js" type="module"></script>
   </body>
 </html>

@@ -95,9 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     //  when its successful
-    request.onsuccess = () => {
+    request.onsuccess = (e) => {
+      // console.log(e.target.result);
+      window.location.href = `../index.html?username=${e.target.result}`;
       myForm.reset();
-      window.location.href = "../index.html";
     };
 
     //   when the transaction finishes

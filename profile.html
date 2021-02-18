@@ -32,7 +32,7 @@
   <body>
     <!-- Lets start with the nav here -->
     <nav class="navbar navbar-expand-sm sticky-top navbar-custom py-3">
-      <a class="navbar-brand" href="index.html">Auctioneer</a>
+      <a class="navbar-brand homepage" href="#">Auctioneer</a>
       <button
         class="navbar-toggler navbar-dark"
         type="button"
@@ -44,16 +44,16 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav mx-auto underlined">
           <li class="nav-item">
-            <a class="nav-link active" href="new_tender.html">New Listing</a>
+            <a class="nav-link newListing" href="#">New Listing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="auctions.html">Active Auctions</a>
+            <a class="nav-link activeAuctions" href="#">Active Auctions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="myAuctions.html">My Auctions</a>
+            <a class="nav-link myAuctions" href="#">My Auctions</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutUs.html">About Us</a>
+            <a class="nav-link announcements" href="#">Announcements</a>
           </li>
         </ul>
       </div>
@@ -166,15 +166,18 @@
 
     <!-- some custom js -->
     <script src="assets/js/profile.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/navigation.js" type="module"></script>
 
     <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
 
     <script>
       const urlParams = new URLSearchParams(window.location.search);
-      var currentUserName = String(urlParams.get("username"));
+      var currentUserName = Number(urlParams.get("username"));
       //DB
       var DB;
+
+      // UI components
 
       var editForm = document.querySelector(".myForm");
       var Username = document.querySelector(".username");
@@ -207,7 +210,7 @@
 
           usersTable
             .collection("users")
-            .doc({ id: 1 })
+            .doc({ id: currentUserName })
             .get()
             .then((currentUser) => {
               Username.value = currentUser.username;

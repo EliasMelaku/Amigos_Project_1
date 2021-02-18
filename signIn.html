@@ -119,8 +119,8 @@
                     .doc({ id: i + 1 })
                     .get()
                     .then((theUser) => {
-                      // console.log(theUser.username);
-                      window.location.href = `index.html?username=${theUser.username} `;
+                      // console.log(theUser.id);
+                      window.location.href = `index.html?username=${theUser.id} `;
                       userFound = true;
                     });
                   break;
