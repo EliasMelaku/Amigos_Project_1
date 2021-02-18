@@ -197,6 +197,35 @@ footer .cols {
 }
 
 /* =================================================================================== */
+/* ===============================auctions display========================================= */
+.jumboContainer {
+  padding: 2rem;
+  background-color: #6640ff;
+}
+.jumbotron {
+  background-color: white;
+  box-shadow: 0 0 8px 1px rgb(68, 64, 64);
+  border-radius: 1rem;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.bidBtn {
+  border-radius: 2rem;
+  margin-left: 80%;
+  position: relative;
+  top: 2.5rem;
+}
+
+.extraInfo {
+  margin: 1rem 3rem;
+  background-image: linear-gradient(rgb(95, 94, 94), rgb(85, 80, 71));
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+}
+
+/* =================================================================================== */
 /* =================================================================================== */
 /* Add some cutsom media queries */
 @media screen and (max-width: 570px) {
@@ -223,6 +252,13 @@ footer .cols {
   }
   .thirdSection {
     margin-bottom: 5.5rem;
+  }
+  .bidBtn {
+    font-size: small;
+  }
+  .extraInfo {
+    display: block;
+    margin: 0.2 0;
   }
 }
 /* Some cool animations */

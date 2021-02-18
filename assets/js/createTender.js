@@ -51,9 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     let transaction = DB.transaction(["listings"], "readwrite");
 
-    console.log("Here");
     let listingTable = transaction.objectStore("listings");
-    console.log("Here");
     let request;
 
     request = listingTable.add(newNotice);
