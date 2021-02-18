@@ -10,7 +10,7 @@ const myForm = document.querySelector(".myForm");
 // Add event listener on load
 
 document.addEventListener("DOMContentLoaded", () => {
-  let UsersDB = indexedDB.open("users", 1);
+  let UsersDB = indexedDB.open("users", 2);
 
   UsersDB.onerror = function () {
     console.log("There was an error");

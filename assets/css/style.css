@@ -149,6 +149,7 @@ footer {
     url("../images/auction.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 5rem;
 }
 footer .cols {
   height: 50vh;

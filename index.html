@@ -159,15 +159,70 @@
       <div class="myCard"></div>
     </div>
     <!-- The footer -->
-    <footer>
-      <div class="row">
-        <div class="col-md-6 cols">
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-youtube"></i>
+    <footer class="text-center text-lg-start">
+      <!-- Grid container -->
+      <div class="container-fluid p-4" style="background-color: transparent">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Information</h5>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
+              atque ea quis molestias. Fugiat pariatur maxime quis culpa
+              corporis vitae repudiandae aliquam voluptatem veniam, est atque
+              cumque eum delectus sint!
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+            <div class="row d-flex">
+              <a href="www.facebook.com">
+                <i class="fab fa-facebook text-white"> </i
+              ></a>
+              <a href="www.twitter.com">
+                <i class="fab fa-twitter text-white"> </i
+              ></a>
+              <a href="www.google.com">
+                <i class="fab fa-google-plus-g text-white"> </i
+              ></a>
+              <a href="www.linkedin.com">
+                <i class="fab fa-linkedin-in text-white"> </i
+              ></a>
+              <a href="www.instagram.com">
+                <i class="fab fa-instagram text-white"> </i
+              ></a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0">Contact</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-home">Amigos </i></li>
+              <li><i class="far fa-envelope">biniteklu487@gmail.com</i></li>
+              <li><i class="fas fa-phone">+251-000-000-00</i></li>
+              <li><i class="fas fa-print">pppp</i></li>
+            </ul>
+          </div>
+
+          <!--Grid column-->
         </div>
-        <div class="col-md-6 cols">w</div>
+        <!--Grid row-->
       </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2021 Copyright:
+        <a class="text-dark" href="#">Amigos.com</a>
+      </div>
+      <!-- Copyright -->
     </footer>
 
     <!-- jQuery library -->
@@ -194,7 +249,7 @@
       // Add Event Listener [on Load]
       document.addEventListener("DOMContentLoaded", () => {
         // create the database
-        let UsersDB = indexedDB.open("users", 1);
+        let UsersDB = indexedDB.open("users", 2);
 
         // if there's an error
         UsersDB.onerror = function () {
