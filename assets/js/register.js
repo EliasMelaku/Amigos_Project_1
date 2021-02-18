@@ -10,7 +10,7 @@ const myForm = document.querySelector(".myForm");
 // Add event listener on load
 
 document.addEventListener("DOMContentLoaded", () => {
-  let UsersDB = indexedDB.open("users", 2);
+  let UsersDB = indexedDB.open("users", 1);
 
   UsersDB.onerror = function () {
     console.log("There was an error");
@@ -38,10 +38,31 @@ document.addEventListener("DOMContentLoaded", () => {
     objectStore.createIndex("email", "email", { unique: true });
 
     console.log("Database ready and fields ceated");
+
+    // Same for the auctions database
+    var listingTable = db.createObjectStore("listings", {
+      keypath: "id",
+      autoIncrement: true,
+    });
+    console.log("listings id created");
+    listingTable.createIndex("title", "title", { unique: false });
+    listingTable.createIndex("detail", "detail", { unique: false });
+    listingTable.createIndex("description", "description", { unique: false });
+    listingTable.createIndex("field", "field", { unique: false });
+    listingTable.createIndex("type", "type", { unique: false });
+    listingTable.createIndex("deadline", "deadline", { unique: false });
+    listingTable.createIndex("telephone", "telephone", { unique: false });
+    listingTable.createIndex("contactEmail", "contactEmail", {
+      unique: false,
+    });
+    listingTable.createIndex("files", "files", { unique: false });
+
+    console.log("Database ready and fields ceated");
   };
 
   //   check if the input is correct before submitting
-  Username.addEventListener("blur", checkIfUserCorrect);
+  Username.addEventListener("keyup", checkIfUserCorrect);
+  Password.addEventListener("keyup", checkIfPassCorrect);
   Cpassword.addEventListener("keyup", checkIfPassCorrect);
   //   Email.addEventListener("blur", checkIfEmailCorrect);
 
@@ -66,13 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let request;
 
-    if (Password.value == Cpassword.value) {
+    if (Password.value == Cpassword.value && checkIfUserCorrect()) {
       request = objectStore.add(newUser);
     } else {
-      alert("Passwords don't match");
+      alert("Passwords don't match or incorrect username");
+      console.log(checkIfUserCorrect());
       return;
     }
-
     //  when its successful
     request.onsuccess = () => {
       myForm.reset();
@@ -100,7 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".username").style.boxShadow =
           "0 0 5px 0.2px #CA0B00";
         document.querySelector(".username").style.border = "none";
-        console.log("Something is up");
       } else {
         document.querySelector(".username").style.boxShadow =
           "0 0 5px 0.2px #4BB543";
@@ -112,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector(".username").style.border = "none";
       console.log("Its Empty");
     }
+    return userResult;
   }
   function checkIfPassCorrect() {
     var value = Password.value;

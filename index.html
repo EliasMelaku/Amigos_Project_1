@@ -249,7 +249,7 @@
       // Add Event Listener [on Load]
       document.addEventListener("DOMContentLoaded", () => {
         // create the database
-        let UsersDB = indexedDB.open("users", 2);
+        let UsersDB = indexedDB.open("users", 1);
 
         // if there's an error
         UsersDB.onerror = function () {

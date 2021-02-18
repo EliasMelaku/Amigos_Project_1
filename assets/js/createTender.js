@@ -16,7 +16,7 @@ const button = document.querySelector(".clickmE");
 // Add event listener on load
 
 document.addEventListener("DOMContentLoaded", () => {
-  var UsersDB = window.indexedDB.open("users", 2);
+  var UsersDB = window.indexedDB.open("users", 1);
 
   UsersDB.onerror = function (event) {
     console.error("Database error: " + event.target.errorCode);
@@ -28,29 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // displayTheDB()
   };
 
-  UsersDB.onupgradeneeded = function (e) {
-    db = e.target.result;
-
-    //   create objectstore
-    var listingTable = db.createObjectStore("listings", {
-      keypath: "id",
-      autoIncrement: true,
-    });
-    console.log("listings id created");
-    listingTable.createIndex("title", "title", { unique: false });
-    listingTable.createIndex("detail", "detail", { unique: false });
-    listingTable.createIndex("description", "description", { unique: false });
-    listingTable.createIndex("field", "field", { unique: false });
-    listingTable.createIndex("type", "type", { unique: false });
-    listingTable.createIndex("deadline", "deadline", { unique: false });
-    listingTable.createIndex("telephone", "telephone", { unique: false });
-    listingTable.createIndex("contactEmail", "contactEmail", {
-      unique: false,
-    });
-    listingTable.createIndex("files", "files", { unique: false });
-
-    console.log("listings indices created");
-  };
   // listingTable.transaction.oncomplete=function (event) {
   //     var newNotice = db.transaction("listings", "readWrite").objectStore("listings");
 
