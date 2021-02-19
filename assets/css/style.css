@@ -150,6 +150,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 5rem;
+  color: white;
 }
 footer .cols {
   height: 50vh;

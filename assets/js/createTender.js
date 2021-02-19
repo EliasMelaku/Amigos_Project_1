@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //   when the transaction finishes
     transaction.oncomplete = () => {
-      console.log("New Notice added");
+      listingForm.reset();
+      alert("New Notice added");
     };
 
     //   if there is an error
