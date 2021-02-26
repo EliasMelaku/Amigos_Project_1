@@ -1,0 +1,189 @@
+/*
+fonts-----------------
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/*
+Global Css
+*/
+:root {
+  --main-color: #7857fe;
+  --color-1: #e91e63;
+  --color-2: #f5ae10;
+  --color-3: #09d69c;
+  --bg-dark: #2b2c2f;
+  --main-to-dark-color: var(--main-color);
+  --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-black-300: 0 5px 15px rgba(0, 0, 0, 0.3);
+  --black-900: #000000;
+  --black-400: #555555;
+  --black-100: #000000;
+  --black-000: #ffffff;
+  --black-alpha-100: rgba(0, 0, 0, 0.05);
+}
+body {
+  font-size: 16px;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  line-height: 1.5;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+ul {
+  list-style: none;
+}
+/*download button*/
+.btn-1 {
+  background-color: #ffffff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  color: var(--main-color);
+  font-size: 16px;
+  text-transform: capitalize;
+  transform: all 0.5s ease;
+  box-shadow: var(--shadow-black-300);
+}
+.btn-1:focus {
+  box-shadow: var(--shadow-black-300);
+}
+.btn-1:hover {
+  color: #ffffff;
+  background-color: var(--main-color);
+}
+/*animation part of the circle at the hompe image*/
+@keyframes spin_01 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*moving up and down the image in the home page*/
+@keyframes bounceTop_01 {
+  0%,
+  100% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+/*the effect wrap */
+.effect-wrap .effect {
+  position: absolute;
+  z-index: -1;
+}
+/*effect wrap 1*/
+.effect-wrap .effect-1 {
+  left: 20%;
+  top: 20%;
+  font-size: 20px;
+  color: var(--color-2);
+  animation: spin_01 5s linear infinite;
+}
+/*effect wrap 2*/
+.effect-wrap .effect-2 {
+  left: 5%;
+  top: 10%;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.5);
+  animation: spin_01 7s linear infinite;
+}
+/*effect wrap 3*/
+.effect-wrap .effect-3 {
+  right: 10%;
+  top: 15%;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.5);
+  animation: spin_01 7s linear infinite;
+}
+/*effect wrap 4*/
+.effect-wrap .effect-4 {
+  left: 5%;
+  bottom: 30%;
+  font-size: 25px;
+  color: var(--color-3);
+  animation: bounceTop_01 3s linear infinite;
+}
+/*
+/* Home Section*/
+.home {
+  min-height: 100vh;
+  padding: 210px 0;
+  background-color: var(--main-to-dark-color);
+  /*effect-wrap */
+  border-radius: 0 0 200px 0;
+  position: relative;
+  z-index: 1;
+}
+.home-text h1 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px;
+}
+.home-text p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 300;
+}
+/*the doownload button */
+.home .home-btn {
+  margin-top: 40px;
+}
+.home-img img {
+  max-width: 270px;
+  width: 100%;
+  box-shadow: var(--shadow-black-100);
+  border-radius: 32px;
+  animation: bounceTop_01 3s ease infinite;
+}
+/*home page image*/
+.home-img {
+  position: relative;
+}
+.home-img .circle {
+  position: absolute;
+  z-index: 1;
+  height: 400px;
+  width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*the circle animation in the home image */
+.home-img .circle::before {
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  left: 30px;
+  top: 30px;
+  transform-origin: 170px 170px;
+  animation: spin_01 10s linear infinite;
+}
+.form-control{
+	border-color: mediumslateblue
+}
+#subNotice {
+	background:slateblue;
+	border-color: darkslateblue
+}
