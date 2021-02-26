@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Create New Tender| Tender.com</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+
+    <!-- Custom fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Montserrat:wght@100&family=Yusei+Magic&family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style_1.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <!-- Lets start with the nav here -->
+    <nav class="navbar navbar-expand-md navbar-custom sticky-top py-3">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand homepage" href="#">Auctioneer</a>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link newListing" href="#">New Listing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link activeAuctions" href="#">Active Auctions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link myAuctions" href="#">My Auctions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link announcements" href="#">Announcements</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item profile" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-placement-md="left" title="Profile">
+                        <a href="#">
+                            <i class="fas fa-user-circle fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--	===============  notice creation form  ====================-->
+
+    <div class="mt-2 ps-5" style="margin-bottom: 2rem">
+        <!-- action="assets/js/createTender.js" method="get" -->
+        <form class="form-card myForm">
+            <div class="form-row align-items-center">
+                <div class="row px-lg-5 mx-lg-5">
+                    <div class="col-12 col-md-5">
+                        <!--				  USER NAME		-->
+                        <div class="mb-3">
+                            <label for="currentUserName" class="form-label">User</label>
+                            <input type="text" class="form-control username myInputs" id="currentUserName" placeholder="Username" disabled />
+                        </div>
+                        <div class="mb-3">
+
+
+                            <!--				  TITLE NAME	-->
+
+                            <label for="noticeTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="noticeTitle" placeholder="...Subject of notice" />
+                        </div>
+                        <!--				BRIEF EXPLANATION-->
+                        <div class="mb-2">
+                            <label for="noticeDescription" class="form-label">Description</label>
+                            <input type="text" class="form-control" id="noticeDescription" placeholder="Brief explanation of subject" />
+                        </div>
+
+
+                    </div>
+                    <!--			DETAIL-->
+                    <div class="col-md-1"></div>
+                    <div class="col-12  col-md-6">
+                        <div class="mb-3">
+                            <label for="noticeDetail" class="form-label">Detail</label
+                >
+                <textarea
+                  class="form-control"
+                  maxlength="2000"
+                  id="noticeDetail"
+                  rows="8"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-5 mb-3">
+              <!--					field of work dd/ select-->
+              <label for="fieldOfWork" class="form-label">
+                Field of work
+              </label>
+
+                            <select type="text" class="bg-white form-control" id="fieldOfWork" name="fieldlist" form="form-card">
+                <option value="medcal_supply">Medical supplier</option>
+                <option value="manual_labour">Manual labour</option>
+                <option value="construction_labour">Construction supply</option>
+                <option value="transport">vehicle transport</option>
+                <option value="security_detail">Security detail</option>
+              </select>
+                            <!--					Type of Notice dropdown / select-->
+                            <label for="typeOfNotice" class="form-label">Type of notice</label
+              >
+
+              <select
+                type="text"
+                class="bg-white form-control"
+                id="typeOfNotice"
+                name="typelist"
+                form="form-card"
+              >
+                <option value="EOI">Expression of Interest</option>
+                <option value="RFI">Request for Information</option>
+                <option value="RFP">Request for proposal</option>
+                <option value="RFQ">Request for Quotation</option>
+                <option value="RFT">Request for tender</option>
+              </select>
+            </div>
+            <!--				date picker + payment condition-->
+            <div class="col-md-1"></div>
+			  <div class="col-12 col-md-6 mb-3">
+              <div class="md-form mb-3">
+                <label for="deadline" class="form-label"
+                  >Deadline of notice</label
+                >
+                <input type="date" id="deadline" class="form-control" />
+              </div>
+             <label class="form-label" for="fileAttachment"
+                >Additional files</label
+              >
+              <input
+                type="file"
+					 
+                class="form-control file"
+                id="fileAttachment"
+                accept="application/pdf"
+				name=""
+              />
+            </div>
+
+            <!--				File attachment-->
+           
+           
+
+            <div class="col-12">
+              <input
+                type="submit"
+                class="btn btn-success mb-2" id="subNotice"
+                value="Submit"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- The footer -->
+    <footer class="text-center text-lg-start">
+      <!-- Grid container -->
+      <div class="container-fluid p-4" style="background-color: transparent">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Information</h5>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
+              atque ea quis molestias. Fugiat pariatur maxime quis culpa
+              corporis vitae repudiandae aliquam voluptatem veniam, est atque
+              cumque eum delectus sint!
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+            <div class="row d-flex">
+              <a href="www.facebook.com">
+                <i class="fab fa-facebook text-white"> </i
+              ></a>
+              <a href="www.twitter.com">
+                <i class="fab fa-twitter text-white"> </i
+              ></a>
+              <a href="www.google.com">
+                <i class="fab fa-google-plus-g text-white"> </i
+              ></a>
+              <a href="www.linkedin.com">
+                <i class="fab fa-linkedin-in text-white"> </i
+              ></a>
+              <a href="www.instagram.com">
+                <i class="fab fa-instagram text-white"> </i
+              ></a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0">Contact</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-home">Amigos </i></li>
+              <li><i class="far fa-envelope">biniteklu487@gmail.com</i></li>
+              <li><i class="fas fa-phone">+251-000-000-00</i></li>
+              <li><i class="fas fa-print">pppp</i></li>
+            </ul>
+          </div>
+
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2021 Copyright:
+        <a class="text-dark" href="#">Amigos.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <!-- The container for everything -->
+    <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      var currentUserName = Number(urlParams.get("username"));
+      var DB;
+      // var editForm = document.querySelector(".myForm");
+      var Username = document.querySelector(".username");
+      document.addEventListener("DOMContentLoaded", () => {
+        displayUser();
+        let usersDBVanilla = indexedDB.open("users", 2);
+        usersDBVanilla.onerror = function() {
+                console.log("There was an error");
+        };
+            // if everything is fine, assign the result to the instance
+        usersDBVanilla.onsuccess = function() {
+            // console.log('Database Ready');
+            // save the result
+            DB = usersDBVanilla.result;
+        };
+        function displayUser() {
+          let userName = new Localbase("users");
+          userName
+          .collection("users")
+          .doc({id:currentUserName})
+          .get()
+          .then((currentUser) => {Username.value = currentUser.username;});
+        }
+      });
+    </script>
+
+    <!-- <script src="assets/js/createTender.js"></script> -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="assets/modules/createTender.js"></script>
+    <script src="assets/modules/app.js" type="module"></script>
+    <script src="assets/modules/navigation.js" type="module"></script>
+  </body>
+</html>

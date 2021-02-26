@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auctioneer</title>
+    <link rel="icon" href="assets/images/auction.jpg" type="image/x-icon" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- Custom fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Montserrat:wght@100&family=Yusei+Magic&family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style_1.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body>
+    <!-- The navigation bar 
+-------Navbar start  -->
+    <nav class="navbar navbar-expand-md navbar-custom sticky-top py-3">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand homepage" href="#">Auctioneer</a>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link newListing" href="#">New Listing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link activeAuctions" href="#">Active Auctions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link myAuctions" href="#">My Auctions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link announcements" href="#">Announcements</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item profile" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-placement-md="left" title="Profile">
+                        <a href="#">
+                            <i class="fas fa-user-circle fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Home section start-->
+
+    <div class="container-fluid jumboContainer">
+        <p id="list-empty" class="text-white-50"><strong>No Notices Found ! </strong> </p>
+        <!-- The Jumbotrons go here -->
+    </div>
+
+    <!-- The footer -->
+    <footer class="text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container-fluid p-4" style="background-color: transparent">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Information</h5>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam, est atque cumque eum delectus sint!
+                    </p>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links</h5>
+                    <div class="row d-flex">
+                        <a href="www.facebook.com">
+                            <i class="fab fa-facebook text-white"> </i
+              ></a>
+              <a href="www.twitter.com">
+                <i class="fab fa-twitter text-white"> </i
+              ></a>
+              <a href="www.google.com">
+                <i class="fab fa-google-plus-g text-white"> </i
+              ></a>
+              <a href="www.linkedin.com">
+                <i class="fab fa-linkedin-in text-white"> </i
+              ></a>
+              <a href="www.instagram.com">
+                <i class="fab fa-instagram text-white"> </i
+              ></a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-0">Contact</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-home">Amigos </i></li>
+                            <li><i class="far fa-envelope">biniteklu487@gmail.com</i></li>
+                            <li><i class="fas fa-phone">+251-000-000-00</i></li>
+                            <li><i class="fas fa-print">pppp</i></li>
+                            </ul>
+                    </div>
+
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2021 Copyright:
+                <a class="text-dark" href="#">Amigos.com</a>
+            </div>
+            <!-- Copyright -->
+    </footer>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- LocalBase -->
+    <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
+    <!-- Some custom JS -->
+
+    <!-- <script src="assets/js/displayItems.js" type="module"></script> -->
+    <script src="assets/modules/app.js" type="module"></script>
+    <script src="assets/modules/navigation.js" type="module"></script>
+
+    <script>
+        // const urlParams = new URLSearchParams(window.location.search);
+        // var currentUserName = Number(urlParams.get("username"));
+        // //DB
+        // var DB;
+
+        // UI component
+
+        const jumboContainer = document.querySelector(".jumboContainer");
+
+        document.addEventListener("DOMContentLoaded", () => {
+            getAllAuctions();
+            let usersDBVanilla = indexedDB.open("users", 2);
+
+            // if there's an error
+            usersDBVanilla.onerror = function() {
+                console.log("There was an error");
+            };
+            // if everything is fine, assign the result to the instance
+            usersDBVanilla.onsuccess = function() {
+                // console.log('Database Ready');
+
+                // save the result
+                DB = usersDBVanilla.result;
+            };
+
+            function getAllAuctions() {
+                let auctionItems = new Localbase("users");
+
+                auctionItems
+                    .collection("listings")
+                    .get()
+                    .then((auctions) => {
+                        displayAuctions(auctions);
+                        if (auctions.length != 0) {
+                            document.getElementById("list-empty").innerHTML = "";
+                        }
+                    });
+
+            }
+
+            function displayAuctions(auctions) {
+                var i;
+
+                for (i = 0; i < auctions.length; i++) {
+                    // create all the necessary fields
+                    const jumbo = document.createElement("div");
+                    const title = document.createElement("h1");
+                    const detail = document.createElement("h5");
+                    const description = document.createElement("p");
+                    const line = document.createElement("hr");
+                    const FOW = document.createElement("span");
+                    const TON = document.createElement("span");
+                    const DATE = document.createElement("span");
+                    //            const negotiable = document.createElement("span");
+                    const btnHolder = document.createElement("p");
+                    const btn = document.createElement("a");
+
+                    jumbo.className = "jumbotron";
+
+                    title.className = "display-3";
+                    title.innerHTML = auctions[i].title;
+
+                    detail.className = "display-6";
+                    detail.innerHTML = auctions[i].detail;
+
+                    description.className = "lead";
+                    description.innerHTML = auctions[i].description;
+
+                    line.className = "my-4";
+
+                    FOW.className = "extraInfo";
+                    FOW.innerHTML = auctions[i].field;
+
+                    TON.className = "extraInfo";
+                    TON.innerHTML = auctions[i].type;
+
+                    DATE.className = "extraInfo";
+                    DATE.innerHTML = auctions[i].deadline;
+
+                    //            negotiable.className = "extraInfo";
+                    //            negotiable.innerHTML = "Negotiable";
+                    btnHolder.className = "lead";
+
+                    btn.className = "btn btn-primary btn-lg bidBtn";
+                    btn.innerHTML = "Make a bid";
+
+                    btnHolder.appendChild(btn);
+
+                    jumbo.appendChild(title);
+                    jumbo.appendChild(detail);
+                    jumbo.appendChild(description);
+                    jumbo.appendChild(line);
+                    jumbo.appendChild(DATE);
+                    jumbo.appendChild(FOW);
+                    jumbo.appendChild(TON);
+                    //            jumbo.appendChild(negotiable);
+                    jumbo.appendChild(btnHolder);
+
+                    jumboContainer.appendChild(jumbo);
+                }
+            }
+            // function updateUserCredentials(e) {
+            //   e.preventDefault();
+            //   let usersTable = new Localbase("users");
+
+            //   usersTable
+            //     .collection("users")
+            //     .doc({ id: 1 })
+            //     .get()
+            //     .then((currentUser) => {
+            //       var transaction = DB.transaction(["users"], "readwrite");
+            //       var objectStore = transaction.objectStore("users");
+
+            //       let newValue = {
+            //         username: Username.value,
+            //         password: Password.value,
+            //         email: Email.value,
+            //         id: currentUser.id,
+            //       };
+
+            //       objectStore.put(newValue);
+
+            //       currentUserName = newValue.username;
+            //       window.alert("Account credentials edited");
+            //       displayUsers();
+            //     });
+            // }
+        });
+    </script>
+
+    <!-- <script src="app.js"></script> -->
+</body>
+
+</html>
