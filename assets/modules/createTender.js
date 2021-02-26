@@ -17,10 +17,10 @@ const button = document.querySelector(".clickmE");
 // Add event listener on load
 
 document.addEventListener("DOMContentLoaded", () => {
-    var UsersDB = window.indexedDB.open("users", 1);
+    var UsersDB = window.indexedDB.open("users", 2);
 
     UsersDB.onerror = function(event) {
-        console.error("Database error: " + event.target.errorCode);
+        console.log("There was an error");
     };
     UsersDB.onsuccess = function(event) {
         console.log("Database is ready");
@@ -59,8 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
         //  when its successful
         request.onsuccess = () => {
             console.log("request sucess!");
-            // noticeForm.reset();
-            // window.location.href = "./newListing.html";
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentUser = Number(urlParams.get("username"));
+            window.location.href = `new_tender.html?username=${currentUser}`;
+            // listingForm.reset();
         };
 
         //   when the transaction finishes

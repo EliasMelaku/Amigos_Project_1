@@ -1,59 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-In | Auctionner</title>
 
     <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
     <!-- Custom fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Montserrat:wght@100&family=Yusei+Magic&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Montserrat:wght@100&family=Yusei+Magic&display=swap" rel="stylesheet" />
     <!-- Fontawesome for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <!-- Custom css -->
     <link rel="stylesheet" href="assets/css/login.css" />
-  </head>
-  <body>
-    <div class="container signInCol">
-      <div class="row">
-        <div class="col formCol">
-          <h4 class="formBrand">Auctioneer</h4>
-          <form action="" class="myForm">
-            <label for="">Userame *</label>
+</head>
 
-            <input
-              type="text"
-              class="form-control username myInputs"
-              required
-              placeholder="Username"
-            />
-            <label for="" class="error">
+<body>
+    <div class="container signInCol">
+        <div class="row">
+            <div class="col formCol">
+                <h4 class="formBrand">Auctioneer</h4>
+                <form action="" class="myForm">
+                    <label for="">Userame *</label>
+
+                    <input type="text" class="form-control username myInputs" required placeholder="Username" />
+                    <label for="" class="error">
               <i class="fas fa-exclamation-circle fa-sm"></i>Username not
               found</label
             >
 
             <label for="">Password * </label>
-            <input
-              type="password"
-              class="form-control password myInputs"
-              required
-              placeholder="********"
-            />
-            <label for="" class="error errorPass">
+                    <input type="password" class="form-control password myInputs" required placeholder="********" />
+                    <label for="" class="error errorPass">
               <i class="fas fa-exclamation-circle fa-xs"></i> Incorrect
               password</label
             >

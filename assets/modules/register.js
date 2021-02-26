@@ -10,7 +10,7 @@ const myForm = document.querySelector(".myForm");
 // Add event listener on load
 
 document.addEventListener("DOMContentLoaded", () => {
-    let UsersDB = indexedDB.open("users", 1);
+    let UsersDB = indexedDB.open("users", 2);
 
     UsersDB.onerror = function() {
         console.log("There was an error");
@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             autoIncrement: true,
         });
         console.log("listings id created");
+        listingTable.createIndex("username", "username", { unique: false });
         listingTable.createIndex("title", "title", { unique: false });
         listingTable.createIndex("detail", "detail", { unique: false });
         listingTable.createIndex("description", "description", { unique: false });

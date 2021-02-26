@@ -193,7 +193,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             displayUsers();
 
-            let usersDBVanilla = indexedDB.open("users", 1);
+            let usersDBVanilla = indexedDB.open("users", 2);
 
             // if there's an error
             usersDBVanilla.onerror = function() {
