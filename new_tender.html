@@ -82,12 +82,12 @@
                             <!--				  TITLE NAME	-->
 
                             <label for="noticeTitle" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="noticeTitle" placeholder="...Subject of notice" />
+                            <input type="text" class="form-control required" id="noticeTitle" placeholder="...Subject of notice" />
                         </div>
                         <!--				BRIEF EXPLANATION-->
                         <div class="mb-2">
                             <label for="noticeDescription" class="form-label">Description</label>
-                            <input type="text" class="form-control" id="noticeDescription" placeholder="Brief explanation of subject" />
+                            <input type="text" class="form-control required" id="noticeDescription" placeholder="Brief explanation of subject" />
                         </div>
 
 
@@ -114,11 +114,11 @@
               </label>
 
                             <select type="text" class="bg-white form-control" id="fieldOfWork" name="fieldlist" form="form-card">
-                <option value="medcal_supply">Medical supplier</option>
-                <option value="manual_labour">Manual labour</option>
-                <option value="construction_labour">Construction supply</option>
-                <option value="transport">vehicle transport</option>
-                <option value="security_detail">Security detail</option>
+                <option value="Medical Supplier ">Medical supplier</option>
+                <option value="Manual Labour">Manual labour</option>
+                <option value="Construction Labour">Construction supply</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Security Detail">Security Detail</option>
               </select>
                             <!--					Type of Notice dropdown / select-->
                             <label for="typeOfNotice" class="form-label">Type of notice</label
@@ -131,11 +131,11 @@
                 name="typelist"
                 form="form-card"
               >
-                <option value="EOI">Expression of Interest</option>
-                <option value="RFI">Request for Information</option>
-                <option value="RFP">Request for proposal</option>
-                <option value="RFQ">Request for Quotation</option>
-                <option value="RFT">Request for tender</option>
+                <option value="Expression of Interest">Expression of Interest</option>
+                <option value="Request for Information">Request for Information</option>
+                <option value="Request for proposal">Request for proposal</option>
+                <option value="Request for Quotation">Request for Quotation</option>
+                <option value="Request for tender">Request for tender</option>
               </select>
             </div>
             <!--				date picker + payment condition-->
@@ -147,17 +147,16 @@
                 >
                 <input type="date" id="deadline" class="form-control" />
               </div>
-             <label class="form-label" for="fileAttachment"
+             <label class="form-label required" for="fileAttachment"
                 >Additional files</label
               >
               <input
-                type="file"
-					 
+                type="file"					 
                 class="form-control file"
                 id="fileAttachment"
                 accept="application/pdf"
-				name=""
-              />
+                onchange="fileName()"
+                />
             </div>
 
             <!--				File attachment-->

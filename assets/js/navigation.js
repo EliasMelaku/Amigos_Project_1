@@ -13,9 +13,9 @@ newListing.addEventListener("click", function() {
 activeAuctions.addEventListener("click", function() {
     window.location.href = `auctions.html?username=${currentUser}`;
 });
-// newListing.addEventListener("click", function () {
-//   window.location.href = `myAuctions.html?username=${currentUser}`;
-// });
+myAuctions.addEventListener("click", function() {
+    window.location.href = `myAuctions.html?username=${currentUser}`;
+});
 logout.addEventListener("click", function() {
     window.location.href = `signIn.html`;
 });

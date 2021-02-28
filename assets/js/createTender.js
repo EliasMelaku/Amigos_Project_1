@@ -5,9 +5,12 @@ const description = document.getElementById("noticeDescription");
 const field = document.getElementById("fieldOfWork");
 const type = document.getElementById("typeOfNotice");
 const deadline = document.getElementById("deadline");
-const tel = document.getElementById("telephone");
-const contactEmail = document.getElementById("contactEmail");
-const files = document.getElementById("fileAttachment");
+var files, filename;
+
+function fileName() {
+    files = document.getElementById("fileAttachment");
+    filename = `${files.files.items(0).name}`;
+}
 const listingForm = document.querySelector(".myForm");
 const button = document.querySelector(".clickmE");
 
@@ -48,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             field: field.value,
             type: type.value,
             deadline: deadline.value,
+            files: filename,
         };
         let transaction = DB.transaction(["listings"], "readwrite");
 
