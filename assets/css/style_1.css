@@ -180,3 +180,10 @@ ul {
   transform-origin: 170px 170px;
   animation: spin_01 10s linear infinite;
 }
+.form-control{
+	border-color: mediumslateblue
+}
+#subNotice {
+	background:slateblue;
+	border-color: darkslateblue
+}
