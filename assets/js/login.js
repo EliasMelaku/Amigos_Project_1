@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let UsersDB = indexedDB.open("users", 1);
+    let UsersDB = indexedDB.open("users", 2);
 
-  UsersDB.onerror = function () {
-    console.log("There was an error");
-  };
-  UsersDB.onsuccess = function () {
-    console.log("Database is ready");
+    UsersDB.onerror = function() {
+        console.log("There was an error");
+    };
+    UsersDB.onsuccess = function() {
+        console.log("Database is ready");
 
-    DB = UsersDB.result;
-  };
+        DB = UsersDB.result;
+    };
 
-  myForm.addEventListener("submit", signIn);
+    myForm.addEventListener("submit", signIn);
 
-  function signIn(e) {
-    e.preventDefault();
-  }
+    function signIn(e) {
+        e.preventDefault();
+    }
 });
