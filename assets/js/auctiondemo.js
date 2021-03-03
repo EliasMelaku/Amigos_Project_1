@@ -1,4 +1,3 @@
-
 // const urlParams = new URLSearchParams(window.location.search);
 // var currentUserName = Number(urlParams.get("username"));
 // //DB
@@ -45,13 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const detail = document.createElement("h5");
       const description = document.createElement("p");
       const line = document.createElement("hr");
-      const FOW = document.createElement("span");
-      const TON = document.createElement("span");
-      const DATE = document.createElement("span");
-      const negotiable = document.createElement("span");
+      const FOW = document.createElement("p");
+      const TON = document.createElement("p");
+      const DATE = document.createElement("p");
+      const negotiable = document.createElement("p");
       const btnHolder = document.createElement("p");
-      const btn = document.createElement("a");
-      let det = document.querySelector("mod-detail")
+      const btn = document.createElement("button");
+      let det = document.querySelector("mod-detail");
       jumbo.className = "jumbotron";
 
       title.className = "display-3";
@@ -79,7 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
       btnHolder.className = "lead";
 
       btn.className = "btn btn-primary btn-lg bidBtn";
+      btn.id = i;
       btn.innerHTML = "Make a bid";
+
+      btn.addEventListener("click", function () {
+        console.log(i);
+        window.location.href = `bid.html?auctionNumber=${Number(btn.id) + 1}`;
+      });
 
       btnHolder.appendChild(btn);
 
@@ -94,32 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
       jumbo.appendChild(btnHolder);
 
       jumboContainer.appendChild(jumbo);
-      var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-modal.style.display = "block";
-det.innerHTML = title
-
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-if (event.target == modal) {
-modal.style.display = "none";
-}
-}
     }
   }
   // function updateUserCredentials(e) {

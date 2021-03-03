@@ -1,5 +1,3 @@
-import * as localbase from "https://unpkg.com/localbase/dist/localbase.min.js";
-
 const urlParams = new URLSearchParams(window.location.search);
 var currentUserName = Number(urlParams.get("username"));
 //DB
@@ -15,62 +13,62 @@ var Email = document.querySelector(".email");
 // var edit = document.querySelector("approveEdit");
 
 document.addEventListener("DOMContentLoaded", () => {
-    displayUsers();
+  displayUsers();
 
-    let usersDBVanilla = indexedDB.open("users", 2);
+  let usersDBVanilla = indexedDB.open("users", 2);
 
-    // if there's an error
-    usersDBVanilla.onerror = function() {
-        console.log("There was an error");
-    };
-    // if everything is fine, assign the result to the instance
-    usersDBVanilla.onsuccess = function() {
-        // console.log('Database Ready');
+  // if there's an error
+  usersDBVanilla.onerror = function () {
+    console.log("There was an error");
+  };
+  // if everything is fine, assign the result to the instance
+  usersDBVanilla.onsuccess = function () {
+    // console.log('Database Ready');
 
-        // save the result
-        DB = usersDBVanilla.result;
-    };
+    // save the result
+    DB = usersDBVanilla.result;
+  };
 
-    editForm.addEventListener("submit", updateUserCredentials);
+  editForm.addEventListener("submit", updateUserCredentials);
 
-    function displayUsers() {
-        let usersTable = new Localbase("users");
+  function displayUsers() {
+    let usersTable = new Localbase("users");
 
-        usersTable
-            .collection("users")
-            .doc({ id: currentUserName })
-            .get()
-            .then((currentUser) => {
-                Username.value = currentUser.username;
-                Password.value = currentUser.password;
-                Email.value = currentUser.email;
-            });
-    }
+    usersTable
+      .collection("users")
+      .doc({ id: currentUserName })
+      .get()
+      .then((currentUser) => {
+        Username.value = currentUser.username;
+        Password.value = currentUser.password;
+        Email.value = currentUser.email;
+      });
+  }
 
-    function updateUserCredentials(e) {
-        e.preventDefault();
-        let usersTable = new Localbase("users");
+  function updateUserCredentials(e) {
+    e.preventDefault();
+    let usersTable = new Localbase("users");
 
-        usersTable
-            .collection("users")
-            .doc({ id: 1 })
-            .get()
-            .then((currentUser) => {
-                var transaction = DB.transaction(["users"], "readwrite");
-                var objectStore = transaction.objectStore("users");
+    usersTable
+      .collection("users")
+      .doc({ id: 1 })
+      .get()
+      .then((currentUser) => {
+        var transaction = DB.transaction(["users"], "readwrite");
+        var objectStore = transaction.objectStore("users");
 
-                let newValue = {
-                    username: Username.value,
-                    password: Password.value,
-                    email: Email.value,
-                    id: currentUser.id,
-                };
+        let newValue = {
+          username: Username.value,
+          password: Password.value,
+          email: Email.value,
+          id: currentUser.id,
+        };
 
-                objectStore.put(newValue);
+        objectStore.put(newValue);
 
-                currentUserName = newValue.username;
-                window.alert("Account credentials edited");
-                displayUsers();
-            });
-    }
+        currentUserName = newValue.username;
+        window.alert("Account credentials edited");
+        displayUsers();
+      });
+  }
 });

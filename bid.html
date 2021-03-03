@@ -4,21 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auctioneer</title>
-    <link rel="icon" href="assets/images/auction.jpg" type="image/x-icon" />
-    <link rel="stylesheet" href="/assets/css/modal.css" />
+    <title>Make a bid</title>
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
-    />
-
-    <!-- Latest compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
 
     <!-- Custom fonts -->
@@ -34,68 +26,116 @@
     />
 
     <link rel="stylesheet" href="assets/css/style_1.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- The navigation bar 
--------Navbar start  -->
-    <nav class="navbar navbar-expand-md navbar-custom sticky-top py-3">
-      <!-- Brand -->
-      <a class="navbar-brand homepage" href="#">Auctioneer</a>
+    <header class="bidHeader"><h1>Make a bid</h1></header>
+    <form class="myForm">
+      <div class="form-row align-items-center">
+        <div class="row px-lg-5 mx-lg-5">
+          <div class="col-12 col-md-5">
+            <!--				  USER NAME		-->
+            <div class="mb-3">
+              <label for="currentUserName" class="form-label"
+                >Company Name</label
+              >
+              <input
+                type="text"
+                class="form-control companyName myInputs"
+                id="currentUserName"
+                placeholder="Company"
+              />
+            </div>
+            <div class="mb-3">
+              <!--				  TITLE NAME	-->
 
-      <!-- Toggler/collapsibe Button -->
-      <button
-        class="navbar-toggler navbar-dark"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavbar"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+              <label for="noticeTitle" class="form-label">Qulaification</label>
+              <input
+                type="text"
+                class="form-control required"
+                id="qualification"
+                placeholder="Major Qualification / Field Of work"
+              />
+            </div>
+            <!--				BRIEF EXPLANATION-->
+            <div class="mb-2">
+              <label for="noticeDescription" class="form-label"
+                >Years of experience</label
+              >
+              <input
+                type="text"
+                class="form-control required"
+                id="experience"
+                placeholder="Enter years of experience in field"
+              />
+            </div>
+          </div>
+          <!--			DETAIL-->
+          <div class="col-md-1"></div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <label for="noticeDetail" class="form-label"
+                >More Qualifications</label
+              >
+              <textarea
+                class="form-control"
+                maxlength="2000"
+                id="noticeDetail"
+                rows="8"
+                placeholder="Add additional qualification and details here"
+              ></textarea>
+            </div>
+          </div>
 
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link newListing" href="#">New Listing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link activeAuctions" href="#">Active Auctions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link myAuctions" href="#">My Auctions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link announcements" href="#">Announcements</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link logout" href="#">Log Out</a>
-          </li>
-          <li
-            class="nav-item profile"
-            data-bs-toggle="tooltip"
-            data-bs-placement="right"
-            data-bs-placement-md="left"
-            title="Profile"
-          >
-            <a href="#">
-              <i class="fas fa-user-circle fa-2x"></i>
-            </a>
-          </li>
-        </ul>
+          <div class="col-12 col-md-5 mb-3">
+            <!--					field of work dd/ select-->
+            <label for="payment" class="form-label">
+              Method of Payment(Credit)
+            </label>
+
+            <select
+              type="text"
+              class="bg-white form-control"
+              id="payment"
+              name="fieldlist"
+              form="form-card"
+            >
+              <option value="Upfront">Full Upfront</option>
+              <option value="seventyThirty">70/30</option>
+              <option value="fiftyFifty">50/50</option>
+              <option value="thirtySevnety">30/70</option>
+              <option value="afterCompletion">After Completion</option>
+            </select>
+            <!--					Type of Notice dropdown / select-->
+          </div>
+          <!--				date picker + payment condition-->
+          <div class="col-md-1"></div>
+          <div class="col-12 col-md-6 mb-3">
+            <label class="form-label required" for="fileAttachment"
+              >Additional files</label
+            >
+            <input
+              type="file"
+              class="form-control file"
+              id="fileAttachment"
+              accept="application/pdf"
+              onchange="fileName()"
+            />
+          </div>
+
+          <!--				File attachment-->
+
+          <div class="col-12">
+            <input
+              type="submit"
+              class="btn btn-success mb-2 text-center"
+              id="makeBid"
+              value="Place Bid"
+            />
+          </div>
+        </div>
       </div>
-    </nav>
-    <!-- Navbar end -->
-
-    <!-- Home section start-->
-
-    <div class="container-fluid jumboContainer">
-      <!-- The Jumbotrons go here -->
-    </div>
-
-    <!-- The footer -->
+    </form>
     <footer class="text-center text-lg-start">
       <!-- Grid container -->
       <div class="container-fluid p-4" style="background-color: transparent">
@@ -162,26 +202,16 @@
       <!-- Copyright -->
     </footer>
 
-    <!-- jQuery library -->
+    <script src="assets/js/bid.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- LocalBase -->
     <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
-    <!-- Some custom JS -->
-
-    <!-- <script src="assets/js/displayItems.js" type="module"></script> -->
-    <script src="assets/js/app.js" type="module"></script>
-    <script src="assets/js/navigation.js" type="module"></script>
-
-    <script src="/assets/js/auctiondemo.js"></script>
-
-    <!-- <script src="app.js"></script> -->
   </body>
 </html>
