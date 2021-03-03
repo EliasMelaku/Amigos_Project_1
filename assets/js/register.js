@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Database ready and fields ceated");
 
     // Same for the auctions database
-    var listingTable = db.createObjectStore("listings", {
-      keypath: "id",
+    let listingTable = db.createObjectStore("listings", {
+      keyPath: "id",
       autoIncrement: true,
     });
     console.log("listings id created");
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     listingTable.createIndex("type", "type", { unique: false });
     listingTable.createIndex("deadline", "deadline", { unique: false });
     listingTable.createIndex("files", "files", { unique: false });
+    listingTable.createIndex("applicants", "applicants", { unique: false });
 
     // Same for the bids made table
     var bidsTable = db.createObjectStore("bids", {

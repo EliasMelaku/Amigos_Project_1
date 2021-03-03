@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const TON = document.createElement("p");
       const DATE = document.createElement("p");
       const negotiable = document.createElement("p");
+      const applicants = document.createElement("p");
       const btnHolder = document.createElement("p");
       const btn = document.createElement("button");
       let det = document.querySelector("mod-detail");
@@ -73,6 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
       DATE.className = "extraInfo";
       DATE.innerHTML = auctions[i].deadline;
 
+      var applicantsNumber =
+        auctions[i].applicants == 0
+          ? "No applicants yet"
+          : `${auctions[i].applicants} applicant(s)`;
+      console.log(auctions[i].applicants);
+      applicants.innerHTML = applicantsNumber;
+
       negotiable.className = "extraInfo";
       negotiable.innerHTML = "Negotiable";
       btnHolder.className = "lead";
@@ -96,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       jumbo.appendChild(TON);
       jumbo.appendChild(DATE);
       jumbo.appendChild(negotiable);
+      jumbo.appendChild(applicants);
       jumbo.appendChild(btnHolder);
 
       jumboContainer.appendChild(jumbo);

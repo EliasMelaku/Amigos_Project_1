@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       field: field.value,
       type: type.value,
       deadline: deadline.value,
+      applicants: 0,
       files: filename,
     };
     let transaction = DB.transaction(["listings"], "readwrite");
