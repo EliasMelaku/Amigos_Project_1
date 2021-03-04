@@ -186,8 +186,8 @@
     <script src="assets/js/navigation.js" type="module"></script>
 
     <script>
-      // const urlParams = new URLSearchParams(window.location.search);
-      // var currentUserName = Number(urlParams.get("username"));
+      const urlParams = new URLSearchParams(window.location.search);
+      var currentUserName = Number(urlParams.get("username"));
       // //DB
       // var DB;
 
@@ -229,61 +229,63 @@
           var i;
 
           for (i = 0; i < auctions.length; i++) {
-            // create all the necessary fields
-            const jumbo = document.createElement("div");
-            const title = document.createElement("h1");
-            const detail = document.createElement("h5");
-            const description = document.createElement("p");
-            const line = document.createElement("hr");
-            const FOW = document.createElement("span");
-            const TON = document.createElement("span");
-            const DATE = document.createElement("span");
-            //            const negotiable = document.createElement("span");
-            const btnHolder = document.createElement("p");
-            const btn = document.createElement("a");
+            if (auctions[i].id == currentUserName) {
+              // create all the necessary fields
+              const jumbo = document.createElement("div");
+              const title = document.createElement("h1");
+              const detail = document.createElement("h5");
+              const description = document.createElement("p");
+              const line = document.createElement("hr");
+              const FOW = document.createElement("p");
+              const TON = document.createElement("p");
+              const DATE = document.createElement("p");
+              const negotiable = document.createElement("p");
+              const btnHolder = document.createElement("p");
+              const btn = document.createElement("a");
 
-            jumbo.className = "jumbotron";
+              jumbo.className = "jumbotron";
 
-            title.className = "display-3";
-            title.innerHTML = auctions[i].title;
+              title.className = "display-3";
+              title.innerHTML = auctions[i].title;
 
-            detail.className = "display-6";
-            detail.innerHTML = auctions[i].detail;
+              detail.className = "display-6";
+              detail.innerHTML = auctions[i].detail;
 
-            description.className = "lead";
-            description.innerHTML = auctions[i].description;
+              description.className = "lead";
+              description.innerHTML = auctions[i].description;
 
-            line.className = "my-4";
+              line.className = "my-4";
 
-            FOW.className = "extraInfo";
-            FOW.innerHTML = auctions[i].field;
+              FOW.className = "extraInfo";
+              FOW.innerHTML = auctions[i].field;
 
-            TON.className = "extraInfo";
-            TON.innerHTML = auctions[i].type;
+              TON.className = "extraInfo";
+              TON.innerHTML = auctions[i].type;
 
-            DATE.className = "extraInfo";
-            DATE.innerHTML = auctions[i].deadline;
+              DATE.className = "extraInfo";
+              DATE.innerHTML = auctions[i].deadline;
 
-            //            negotiable.className = "extraInfo";
-            //            negotiable.innerHTML = "Negotiable";
-            btnHolder.className = "lead";
+              negotiable.className = "extraInfo";
+              negotiable.innerHTML = "Negotiable";
+              btnHolder.className = "lead";
 
-            btn.className = "btn btn-primary btn-lg bidBtn";
-            btn.innerHTML = "Make a bid";
+              btn.className = "btn btn-primary btn-lg bidBtn";
+              btn.innerHTML = "See applicants";
 
-            btnHolder.appendChild(btn);
+              btnHolder.appendChild(btn);
 
-            jumbo.appendChild(title);
-            jumbo.appendChild(detail);
-            jumbo.appendChild(description);
-            jumbo.appendChild(line);
-            jumbo.appendChild(DATE);
-            jumbo.appendChild(FOW);
-            jumbo.appendChild(TON);
-            //            jumbo.appendChild(negotiable);
-            jumbo.appendChild(btnHolder);
+              jumbo.appendChild(title);
+              jumbo.appendChild(detail);
+              jumbo.appendChild(description);
+              jumbo.appendChild(line);
+              jumbo.appendChild(DATE);
+              jumbo.appendChild(FOW);
+              jumbo.appendChild(TON);
+              jumbo.appendChild(negotiable);
+              jumbo.appendChild(btnHolder);
 
-            jumboContainer.appendChild(jumbo);
+              jumboContainer.appendChild(jumbo);
+            }
           }
         }
         // function updateUserCredentials(e) {

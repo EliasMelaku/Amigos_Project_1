@@ -1,4 +1,3 @@
-
 const urlParams = new URLSearchParams(window.location.search);
 var currentUserName = Number(urlParams.get("username"));
 //DB
@@ -47,28 +46,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   function updateUserCredentials(e) {
     e.preventDefault();
-    let usersTable = new Localbase("users");
+    // let usersTable = new Localbase("users");
 
-    usersTable
-      .collection("users")
-      .doc({ id: 1 })
-      .get()
-      .then((currentUser) => {
-        var transaction = DB.transaction(["users"], "readwrite");
-        var objectStore = transaction.objectStore("users");
+    var transaction = DB.transaction(["users"], "readwrite");
+    var objectStore = transaction.objectStore("users");
 
-        let newValue = {
-          username: Username.value,
-          password: Password.value,
-          email: Email.value,
-          id: currentUser.id,
-        };
+    let updater;
 
-        objectStore.put(newValue);
+    let newValue = {
+      username: Username.value,
+      password: Password.value,
+      email: Email.value,
+      id: currentUserName,
+    };
 
-        currentUserName = newValue.username;
-        window.alert("Account credentials edited");
-        displayUsers();
-      });
+    update = objectStore.put(newValue);
+
+    // currentUserName = newValue.username;
+    window.alert("Account credentials edited");
+    displayUsers();
   }
 });

@@ -1,5 +1,5 @@
-// const urlParams = new URLSearchParams(window.location.search);
-// var currentUserName = Number(urlParams.get("username"));
+const urlParams = new URLSearchParams(window.location.search);
+var currentUserName = Number(urlParams.get("username"));
 // //DB
 // var DB;
 
@@ -38,76 +38,78 @@ document.addEventListener("DOMContentLoaded", () => {
   function displayAuctions(auctions) {
     var i;
     for (i = 0; i < auctions.length; i++) {
-      // create all the necessary fields
-      const jumbo = document.createElement("div");
-      const title = document.createElement("h1");
-      const detail = document.createElement("h5");
-      const description = document.createElement("p");
-      const line = document.createElement("hr");
-      const FOW = document.createElement("p");
-      const TON = document.createElement("p");
-      const DATE = document.createElement("p");
-      const negotiable = document.createElement("p");
-      const applicants = document.createElement("p");
-      const btnHolder = document.createElement("p");
-      const btn = document.createElement("button");
-      let det = document.querySelector("mod-detail");
-      jumbo.className = "jumbotron";
+      if (auctions[i].id != currentUserName) {
+        // create all the necessary fields
+        const jumbo = document.createElement("div");
+        const title = document.createElement("h1");
+        const detail = document.createElement("h5");
+        const description = document.createElement("p");
+        const line = document.createElement("hr");
+        const FOW = document.createElement("p");
+        const TON = document.createElement("p");
+        const DATE = document.createElement("p");
+        const negotiable = document.createElement("p");
+        const applicants = document.createElement("p");
+        const btnHolder = document.createElement("p");
+        const btn = document.createElement("button");
+        let det = document.querySelector("mod-detail");
+        jumbo.className = "jumbotron";
 
-      title.className = "display-3";
-      title.innerHTML = auctions[i].title;
+        title.className = "display-3";
+        title.innerHTML = auctions[i].title;
 
-      detail.className = "display-6";
-      detail.innerHTML = auctions[i].detail;
+        detail.className = "display-6";
+        detail.innerHTML = auctions[i].detail;
 
-      description.className = "lead";
-      description.innerHTML = auctions[i].description;
+        description.className = "lead";
+        description.innerHTML = auctions[i].description;
 
-      line.className = "my-4";
+        line.className = "my-4";
 
-      FOW.className = "extraInfo";
-      FOW.innerHTML = auctions[i].field;
+        FOW.className = "extraInfo";
+        FOW.innerHTML = auctions[i].field;
 
-      TON.className = "extraInfo";
-      TON.innerHTML = auctions[i].type;
+        TON.className = "extraInfo";
+        TON.innerHTML = auctions[i].type;
 
-      DATE.className = "extraInfo";
-      DATE.innerHTML = auctions[i].deadline;
+        DATE.className = "extraInfo";
+        DATE.innerHTML = auctions[i].deadline;
 
-      var applicantsNumber =
-        auctions[i].applicants == 0
-          ? "No applicants yet"
-          : `${auctions[i].applicants} applicant(s)`;
-      console.log(auctions[i].applicants);
-      applicants.innerHTML = applicantsNumber;
+        var applicantsNumber =
+          auctions[i].applicants == 0
+            ? "No applicants yet"
+            : `${auctions[i].applicants} applicant(s)`;
+        console.log(auctions[i].applicants);
+        applicants.innerHTML = applicantsNumber;
 
-      negotiable.className = "extraInfo";
-      negotiable.innerHTML = "Negotiable";
-      btnHolder.className = "lead";
+        negotiable.className = "extraInfo";
+        negotiable.innerHTML = "Negotiable";
+        btnHolder.className = "lead";
 
-      btn.className = "btn btn-primary btn-lg bidBtn";
-      btn.id = i;
-      btn.innerHTML = "Make a bid";
+        btn.className = "btn btn-primary btn-lg bidBtn";
+        btn.id = i;
+        btn.innerHTML = "Make a bid";
 
-      btn.addEventListener("click", function () {
-        console.log(i);
-        window.location.href = `bid.html?auctionNumber=${Number(btn.id) + 1}`;
-      });
+        btn.addEventListener("click", function () {
+          console.log(i);
+          window.location.href = `bid.html?auctionNumber=${Number(btn.id) + 1}`;
+        });
 
-      btnHolder.appendChild(btn);
+        btnHolder.appendChild(btn);
 
-      jumbo.appendChild(title);
-      jumbo.appendChild(detail);
-      jumbo.appendChild(description);
-      jumbo.appendChild(line);
-      jumbo.appendChild(FOW);
-      jumbo.appendChild(TON);
-      jumbo.appendChild(DATE);
-      jumbo.appendChild(negotiable);
-      jumbo.appendChild(applicants);
-      jumbo.appendChild(btnHolder);
+        jumbo.appendChild(title);
+        jumbo.appendChild(detail);
+        jumbo.appendChild(description);
+        jumbo.appendChild(line);
+        jumbo.appendChild(FOW);
+        jumbo.appendChild(TON);
+        jumbo.appendChild(DATE);
+        jumbo.appendChild(negotiable);
+        jumbo.appendChild(applicants);
+        jumbo.appendChild(btnHolder);
 
-      jumboContainer.appendChild(jumbo);
+        jumboContainer.appendChild(jumbo);
+      }
     }
   }
   // function updateUserCredentials(e) {
