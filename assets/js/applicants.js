@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
         //   jumbo.appendChild(TON);
         //   jumbo.appendChild(DATE);
         row.appendChild(applicantId);
-        console.log("here");
         row.appendChild(qualification);
         row.appendChild(experience);
         row.appendChild(description);
