@@ -271,6 +271,11 @@
 
               btn.className = "btn btn-primary btn-lg bidBtn";
               btn.innerHTML = "See applicants";
+              btn.id = auctions[i].title;
+              btn.addEventListener("click", function () {
+                // console.log(btn.id);
+                window.location.href = `applicants.html?auctionNumber=${btn.id}`;
+              });
 
               btnHolder.appendChild(btn);
 

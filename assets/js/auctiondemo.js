@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         btn.addEventListener("click", function () {
           console.log(i);
-          window.location.href = `bid.html?auctionNumber=${Number(btn.id) + 1}`;
+          window.location.href = `bid.html?auctionNumber=${btn.id}`;
         });
 
         btnHolder.appendChild(btn);
